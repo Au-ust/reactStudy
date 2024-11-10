@@ -1,0 +1,110 @@
+  /* p {
+            color: skyblue;
+            font-size: 12px;
+        } */
+
+  div {
+      color: deeppink;
+  }
+
+  .陶喆 {
+      color: fuchsia
+  }
+
+  .周杰伦 {
+      color: forestgreen
+  }
+
+  .first {
+      height: 100px;
+      width: 100px;
+      background-color: gold;
+  }
+
+  .second {
+      height: 100px;
+      width: 100px;
+      background-color: brown;
+  }
+
+  .third {
+      height: 100px;
+      width: 100px;
+      background-color: black;
+  }
+
+  .eat {
+      color: blueviolet;
+  }
+
+  .size {
+      font-size: 12px;
+  }
+
+  #荷叶饭 {
+      color: rgb(red, green, blue)
+  }
+
+  /* * {
+            color: mediumslateblue;
+        } */
+
+  .陶喆 {
+      font-family: '宋体'
+  }
+
+  .周杰伦 {
+      font-family: 'Cambria';
+  }
+
+  .eat {
+      font-family: 'Courier New', Courier, monospace;
+  }
+
+  /* body {
+            font-size: 80px;
+        }
+
+        p {
+            font-size: 100px;
+        } */
+
+  .bold {
+      font-weight: 700;
+  }
+
+  .em {
+      font-style: italic;
+  }
+
+  .normal {
+      font-style: normal;
+  }
+
+  #荷叶饭 {
+      /* font:font-style font-weight font-size/line-height font-family */
+      font: italic 700 50px 'icrosoft yahei';
+  }
+
+  /* .陶喆 {
+            text-align: center;
+        } */
+  .陶喆 {
+      text-decoration: underline;
+  }
+
+  .周杰伦 {
+      text-decoration: overline;
+  }
+
+  .林俊杰 {
+      text-decoration: line-through
+  }
+
+  p {
+      text-indent: 2em;
+  }
+
+  p {
+      line-height: 16px;
+  }
