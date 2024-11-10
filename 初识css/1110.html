@@ -1,0 +1,123 @@
+<!-- emmet语法 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav {
+            width: 100px;
+        }
+
+        /* 选中ol里的li */
+        ol li {
+            color: deeppink
+        }
+
+        /* ol li a {
+            color: cornflowerblue;
+        } */
+
+        /* .ol2 li a {
+            color: darkslateblue
+        } */
+
+        ol>li {
+            text-align: center;
+        }
+
+        ol {
+            text-align: center;
+        }
+
+        div,
+        p,
+        ul>li {
+            text-decoration: line-through;
+        }
+
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: aquamarine;
+        }
+
+        a:hover {
+            color: blue;
+        }
+
+        a:active {
+            color: fuchsia;
+        }
+
+        input:focus {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <!--div*3-->
+    <div></div>
+    <div></div>
+    <div></div>
+    <!--ul>li-->
+    <ui>
+        <l></l>
+    </ui>
+    <!--div+p-->
+    <div></div>
+    <p></p>
+    <!--.classname-->
+    <div class="nav"></div>
+    <!--#idname-->
+    <div id="user"></div>
+    <!--p.classname-->
+    <p class="numb"></p>
+    <span class="hello"></span>
+    <!--结合使用--><!--ui>li#username-->
+    <ul>
+        <li id="username"></li>
+    </ul>
+    <!--生成五个一样的,但是有序号区分，￥：自增--><!--.demo$*5-->
+    <div class="demo1"></div>
+    <div class="demo2"></div>
+    <div class="demo3"></div>
+    <div class="demo4"></div>
+    <div class="demo5"></div>
+    <!--生成标签内默认文字--><!--div{文字}-->
+    <div>橘绿之泉</div>
+    <p>清晨茉莉</p>
+    <ol>
+        <li>我是ol的子元素1</li>
+        <li>我是ol的子元素2</li>
+        <li>我是ol的子元素3</li>
+        <li><a href="#">我是ol的孙元素，li的子元素</a></li>
+    </ol>
+    <ol class="ol2">
+        <li>我是ol的子元素4</li>
+        <li>我是ol的子元素5</li>
+        <li>我是ol的子元素6</li>
+        <li><a href="#">我是ol的孙元素，li的子元素</a></li>
+    </ol>
+    <ul>
+        <li>我是ul的子元素1</li>
+        <li>我是ul的子元素2</li>
+        <li>我是ul的子元素3</li>
+    </ul>
+    <a href="https://blog.csdn.net/Au_ust?type=blog">august的csdn主页捏</a><br>
+    <a href="https://blog.csdn.net/VickyTsai/article/details/86749904">emmet的使用,这个还没点过</a><br>
+    <a href="https://blog.csdn.net/Desamond/article/details/140958958">vscode的ssh链接,这个还没点过</a><br>
+    <a href="https://www.w3school.com.cn/css/css_syntax.ap">chargpt,这个还没点过</a><br>
+    <a href="https://www.w3school.com.cn/css">哈哈哈</a>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+</body>
+
+</html>
