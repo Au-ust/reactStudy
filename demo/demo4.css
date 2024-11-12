@@ -1,0 +1,40 @@
+.nav a {
+    display: inline-block;
+    background-color: cornflowerblue;
+    width: 128px;
+    height: 70px;
+    text-align: center;
+    line-height: 60px;
+    text-decoration: none;
+    background-image: url(微信图片_20241111140336.jpg);
+    background-size: cover;
+}
+
+.nav .name1:hover {
+    background-image: url(微信图片_20241112165108.jpg);
+}
+
+.nav .name2:hover {
+    background-image: url(微信图片_20241112165108.jpg);
+}
+
+.nav .name3:hover {
+    background-image: url(微信图片_20241112165108.jpg);
+}
+
+.nav .name4:hover {
+    background-image: url(微信图片_20241112165108.jpg);
+}
+
+.nav .name5:hover {
+    background-image: url(微信图片_20241112165108.jpg);
+}
+
+.nav {
+    color: aquamarine;
+    font-size: 12px;
+}
+
+.nav {
+    color: blue;
+}

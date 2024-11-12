@@ -1,0 +1,96 @@
+.nav {
+    width: 100px;
+}
+
+/* 选中ol里的li */
+ol li {
+    color: deeppink
+}
+
+ol li a {
+    color: cornflowerblue;
+}
+
+.ol2 li a {
+    color: darkslateblue
+}
+
+ol>li {
+    text-align: center;
+}
+
+ol {
+    text-align: center;
+}
+
+div,
+p,
+ul>li {
+    text-decoration: line-through;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: aquamarine;
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active {
+    color: fuchsia;
+}
+
+input:focus {
+    background-color: aquamarine;
+}
+
+a {
+    width: 300px;
+    height: 100px;
+    background-color: hotpink;
+    display: block;
+}
+
+p {
+    background-color: dodgerblue;
+    display: inline-block;
+}
+
+/* h3 {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    background-image: url(../微信图片_20241106131133.png);
+     background-color: dodgerblue; 
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    font-size: 14px;
+    font-weight: 400;
+    text-indent: 2em;
+}*/
+
+
+/* body {
+    background: url(../lofter_1666024992076.jpg) no-repeat fixed center top;
+} */
+
+body {
+    background-size: cover;
+    background: rgba(0, 0, 0, 0.3);
+    background-attachment: fixed;
+}
+
+body {
+    /* width: 10000px; 这样调不了宽度   */
+    background-size: cover;
+    background-image: url(../lofter_1666024992076.jpg);
+    background-repeat: no-repeat;
+    background-position: center 50px;
+    background-attachment: scroll;
+}

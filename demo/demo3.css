@@ -1,0 +1,15 @@
+a {
+    background-color: rgb(150, 144, 187);
+    color: black;
+    width: 230px;
+    height: 40px;
+    display: block;
+    text-indent: 2em;
+    text-decoration: none;
+    line-height: 40px;
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+    background-color: khaki;
+}
