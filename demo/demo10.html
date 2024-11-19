@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tb-promo {
+            position: relative;
+            width: 520px;
+            height: 280px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+
+        .tb-promo img {
+            width: 520px;
+            height: 280px;
+        }
+
+        .tb-promo .prev {
+            left: 0px;
+            top: 50%;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .tb-promo .next {
+            right: 0px;
+            top: 50%;
+            border-radius: 15px 0 0 15px;
+        }
+
+        /* 使用并集选择器 */
+        .prev,
+        .next {
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            margin-top: -15px;
+            width: 20px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, .3);
+            text-decoration: none;
+            text-align: center;
+            line-height: 30px;
+            color: aliceblue;
+            /* border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px; */
+            border-radius: 15px 0 0 15px;
+            /*也可以*/
+        }
+
+        .promo-nav {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -35px;
+            width: 70px;
+            height: 13px;
+            border-radius: 7px;
+            background-color: rgba(190, 190, 190, 0.7);
+        }
+
+        .promo-nav li {
+            float: left;
+            height: 8px;
+            width: 8px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            line-height: 8px;
+            margin: 3px;
+        }
+
+        .promo-nav .selected {
+            background-color: #ff5000;
+
+        }
+
+        .tudou {
+            position: relative;
+            width: 444px;
+            height: 320px;
+            background-color: #ff5000;
+            margin: 0 auto;
+        }
+
+        .tudou img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mask {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .3) url(../微信图片_20241106131128.png) no-repeat center;
+        }
+
+        .tudou:hover .mask {
+            /* 当鼠标经过了tudou的时候，mask显现出来 */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tb-promo">
+        <img src="8dede2520f8dfff9c9b690af498cafe8.jpg" alt="">
+        <a href="#" class="prev">&lt;</a>
+        <a href="#" class="next">&gt;</a>
+        <ul class="promo-nav">
+            <li class="selected"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="tudou">
+        <div class="mask"></div>
+        <img src="../lofter_1666024992076.jpg" alt="">
+    </div>
+</body>
+
+</html>

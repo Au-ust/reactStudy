@@ -1,10 +1,11 @@
 a {
     background-color: rgb(150, 144, 187);
     color: black;
-    width: 230px;
+    width: 170px;
     height: 40px;
     display: block;
-    text-indent: 2em;
+    /* text-indent: 2em; 现在我们用行内距调整*/
+    padding-left: 30px;
     text-decoration: none;
     line-height: 40px;
 }

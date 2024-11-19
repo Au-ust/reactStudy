@@ -5,10 +5,277 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* body {
+            color: blue;
+            font: 12px/1.5 'microsoft yahei';
+        } */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #sjb {
+            /* font-size: 14px; */
+            color: brown
+                /* 因为层叠性，所以div的大小为14px
+            因为行高继承性，所以div的行高是14*1.5==21px */
+        }
+
+        p {
+            color: aqua;
+        }
+
+        div p {
+            color: gold;
+        }
+
+        .nav ul li {
+            color: pink;
+        }
+
+        div ul li {
+
+            color: aqua;
+        }
+
+        /* div {
+            width: 300px;
+            height: 200px;
+            border-width: 5px;
+            border-style: double;
+            border-color: mediumvioletred;
+        } */
+        /* div {
+            width: 240px;
+            height: 145.46px;
+            border: 10px dotted crimson;
+            border-top: 5px double cornflowerblue;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        } */
+        .sb a {
+            text-decoration: none;
+            font-size: 12px;
+            color: #4c4c4c;
+            line-height: 41px;
+            padding: 0 20px;
+        }
+
+        .sb {
+            height: 41px;
+            border-bottom: 1px solid #edeef0;
+            border-top: 3px solid #ff8500;
+            background-color: #fcfcfc;
+            color: #4c4c4c;
+            text-decoration: none;
+        }
+
+        .sb a:hover {
+            height: 41px;
+            display: inline-block;
+            color: chocolate;
+            background-color: rgb(198, 202, 202);
+
+        }
+
+        h1 {
+            background-color: darkgray;
+            width: 100%;
+            padding: 30px;
+
+        }
+
+        /* .sss {
+            width: 300px;
+            height: 300px;
+            background-color: darkturquoise;
+        } */
+
+        .x,
+        .y {
+            background-color: cornflowerblue;
+            background-image: url(微信图片_20241113202301.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 300px;
+            height: 200px;
+            /* margin: 0 auto; */
+            /* text-align: center; */
+            /* border-radius: 50px 100px 150px 200px; */
+
+
+        }
+
+        /* div {
+            display: inline-block;
+        } */
+
+        .x {
+            /* margin-top: 200px;
+            margin-bottom: 5px; */
+            float: left;
+            /* width: 400px;
+            height: 400px; */
+        }
+
+        .y {
+            float: right;
+            /* background-image: url(../demo/微信图片_20241113155824.jpg); */
+        }
+
+        .x span {
+            margin-top: 100px;
+            background-color: aquamarine;
+            width: 200px;
+            height: 100px;
+            float: left;
+        }
+
+        .xy {
+            background-color: azure;
+            width: 700px;
+            /* height: 500px; */
+            margin: 0 auto;
+        }
+
+        .www {
+            text-shadow: 10px 10px 10px black;
+        }
+
+        .top {
+            height: 50px;
+            background-color: grey;
+            text-align: center;
+        }
+
+        .banner {
+            width: 980px;
+            height: 150px;
+            background-color: grey;
+            margin: 15px auto;
+            text-align: center;
+        }
+
+        .box {
+            overflow: hidden;
+            width: 980px;
+            /* height: 300px; */
+            margin: 0px auto;
+            background-color: deeppink;
+        }
+
+        .box li {
+            width: 233.75px;
+            height: 300px;
+            background-color: rgb(179, 106, 106);
+            float: left;
+            margin-right: 15px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .box .last {
+            margin-right: 0px;
+        }
+
+        .footer {
+            height: 200px;
+            background-color: grey;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* .clearfix::after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix {
+            zoom: 1;
+        } */
+        .clearfix::before,
+        .clearfix::after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        /* .extern {
+            clear: both;
+
+        } */
+    </style>
 </head>
+<section></section>
 
 <body>
+    <div class="www">
+        你们好啊我是div你们好啊我是div你们好啊我是div你们好啊我是div你们好啊我是div你们好啊我是div你们好啊我是div你们好啊我是div你们好啊我是div你们好啊我是div你们好啊我是div你们好啊我是div
+    </div>
+    <p>你们好啊我是p</p>
+    <div id="sjb">
+        <!-- 我是div<br /> -->
+        <p>我是div的子p</p>
+    </div>
 
+    <div>
+        <ul>
+            <li>我是div下的ul下的子li</li>
+        </ul>
+    </div>
+    <div class="nav">
+        <ul>
+            <li>我是类名为nav的div下的ul下的子li</li>
+        </ul>
+    </div>
+    <div class="sb">
+        <a href="#">新浪导航</a>
+        <a href="#">手机新浪网</a>
+        <a href="#">移动客户端</a>
+        <a href="#">微博</a>
+    </div>
+    <div class="sss">
+        <h1></h1>
+    </div>
+    <!-- <div class="xy">
+        <div class="x">
+            <span>你们好啊我是x的孩子盒</span>
+        </div>
+        <div class="y">
+        </div>
+    </div> -->
+
+    <div class="top">top</div>
+    <div class="banner">banner</div>
+    <div class="box clearfix">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="last"></li>
+            <!-- <div class="extern"></div> -->
+        </ul>
+    </div>
+    <div class="footer">fooer</div>
 </body>
 
 </html>

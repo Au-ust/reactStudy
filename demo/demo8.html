@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            width: 1226px;
+            height: 644px;
+            background-color: beige;
+            margin: 0px auto;
+            overflow: hidden;
+        }
+
+        .box .left {
+            width: 234px;
+            height: 460px;
+            background-color: rgba(105, 101, 101, .6);
+            float: left;
+        }
+
+        .box .right {
+            width: 992px;
+            height: 460px;
+            background-color: blueviolet;
+            float: left;
+            text-align: center;
+
+        }
+
+        .box .right .png1 {
+            width: 1226px;
+            height: 460px;
+            display: block;
+            overflow-clip-margin: content-box;
+            overflow: clip;
+
+        }
+
+        .box .bottom {
+            margin-top: 474px;
+            background-color: cadetblue;
+            width: 1226px;
+            height: 170px;
+            /* float: right */
+        }
+
+        .box .bottom .bottom-l {
+            width: 234px;
+            height: 170px;
+            background-color: blue;
+            float: left;
+
+        }
+
+        .box .bottom .bottom-r>div {
+            width: 316px;
+            height: 170px;
+            background-color: gold;
+            float: right;
+            display: block;
+            margin: 0px 10px 0px 0px;
+        }
+
+        .box .bottom .bottom-r>div img {
+            width: 316px;
+            height: 170px;
+        }
+
+        .box .bottom .bottom-r .last {
+            margin-right: 0px;
+        }
+
+        .box .left a {
+            /* background-color: rgb(150, 144, 187); */
+            color: black;
+            width: 234px;
+            height: 42px;
+            display: block;
+            /* text-indent: 2em; 现在我们用行内距调整*/
+            padding-left: 30px;
+            text-decoration: none;
+            line-height: 42px;
+        }
+
+        .box .left a:hover {
+            color: rgb(255, 255, 255);
+            background-color: khaki;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">
+            <a href="#">大学英语</a>
+            <a href="#">数理方程</a>
+            <a href="#">模拟电子技术</a>
+            <a href="#">概率论与数理统计</a>
+            <a href="#">嵌入式与微机原理</a>
+            <a href="#">大学物理</a>
+            <a href="#">马原</a>
+            <a href="#">我恨你们所有人</a>
+            <a href="#">嘻嘻</a>
+            <a href="#">xupt你是永远杀不死我的</a>
+        </div>
+        <div class="right">
+            <img src="027dedf7486746ca8b768923c28b76c5.png" alt="" class="png1">
+        </div>
+        <div class="bottom">
+            <div class="bottom-l"> </div>
+            <div class="bottom-r">
+                <div class="last"><img src="1ac77590368ff636d0b4f6a988133f55.png" alt="耳机"></div>
+                <div><img src="8dede2520f8dfff9c9b690af498cafe8.jpg" alt="电视"></div>
+                <div><img src="6b67117bc92924fb2ff0e7ad2be86084.png" alt="手机"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
