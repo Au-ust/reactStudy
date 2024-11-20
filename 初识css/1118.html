@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?ea0gga');
+            src: url('fonts/icomoon.eot?ea0gga#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?ea0gga') format('truetype'),
+                url('fonts/icomoon.woff?ea0gga') format('woff'),
+                url('fonts/icomoon.svg?ea0gga#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
         .box-father {
 
             width: 200px;
@@ -35,18 +47,162 @@
             width: 300px;
             height: 300px;
             background-color: rgb(78, 65, 126);
+
+        }
+
+        .spr {
+            float: left;
+            margin: 100px auto;
+            width: 140px;
+            height: 140px;
+            background: url(d1c79313910a7d77474f2a4e9d19ad30.png);
+            background-position: -260px -165px;
+        }
+
+        .spr1 {
+            float: left;
+            margin: 100px auto;
+            width: 140px;
+            height: 140px;
+            background: url(d1c79313910a7d77474f2a4e9d19ad30.png) -450px -690px no-repeat;
+
+        }
+
+        .spr2 {
+            float: left;
+            margin: 100px auto;
+            width: 140px;
+            height: 140px;
+            background: url(d1c79313910a7d77474f2a4e9d19ad30.png) 20px -170px no-repeat;
+
+        }
+
+        span {
+            font-family: 'icomoon';
+        }
+
+        .box1 {
+            width: 0;
+            height: 0;
+            border-top: 10px solid pink;
+            border-bottom: 10px solid red;
+            border-left: 10px solid blue;
+            border-right: 10px solid green;
+        }
+
+        .box2 {
+            width: 0;
+            height: 0;
+            border: 50px solid transparent;
+            border-bottom-color: pink;
+        }
+
+        .box3 {
+            position: relative;
+            top: 100px;
+            width: 150px;
+            height: 120px;
+            background-color: aqua;
+        }
+
+        .box3 span {
+            position: absolute;
+            width: 0;
+            height: 0;
+            /*为了照顾兼容性*/
+            top: -40px;
+            left: 50%;
+            margin-left: -20px;
+            line-height: 0;
+            font-size: 0;
+            border: 20px solid transparent;
+            border-bottom-color: aqua;
+        }
+
+        input,
+        textarea {
+            outline: none;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        /* div {
+            float: left;
+            width: 700px;
+            height: 500px;
+            border: 2px solid pink;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-left: -2px;
+        }
+
+
+        .www {
+            position: relative;
+            float: left;
+            width: 30px;
+            height: 40px;
+            border: 2px solid pink;
+            /* margin-left: -2px; */
+
+        }
+
+        div:hover {
+            z-index: 1;
+            border: 2px solid blue;
+
+        }
+
+        .box {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 36px;
+            text-decoration: none;
         }
     </style>
+
 </head>
 
 <body>
 
-    <div class="box-grand">
+    <!-- <div class="box-grand">
         <div class="box-father">
             <div class="box-sun"></div>
             <div class="box-sun2"></div>
         </div>
+    </div> -->
+    <!-- <div class="spr"></div>
+    <div class="spr1"></div>
+    <div class="spr2"></div>
+    <span></span> -->
+    <!-- <div class="box1"></div>
+    <div class="box2"></div> -->
+    <!-- 取消表单轮廓+防止拖拽文本域 -->
+    <input type="text">
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <div class="box3">
+        <span>
 
+        </span>
+    </div>
+    <div class="sss"><img src="../demo/哈哈哈.png" alt="" style="vertical-align: bottom;">dasddddddddddddddddddddddd</div>
+    <div class="www">www</div>
+    <div .box>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
     </div>
 </body>
 
