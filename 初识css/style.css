@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?ea0gga');
-  src:  url('fonts/icomoon.eot?ea0gga#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?ea0gga') format('truetype'),
-    url('fonts/icomoon.woff?ea0gga') format('woff'),
-    url('fonts/icomoon.svg?ea0gga#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?apa2ej');
+  src:  url('fonts/icomoon.eot?apa2ej#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?apa2ej') format('truetype'),
+    url('fonts/icomoon.woff?apa2ej') format('woff'),
+    url('fonts/icomoon.svg?apa2ej#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -63,4 +63,13 @@
 }
 .icon-android:before {
   content: "\eac0";
+}
+.icon-cheveron-down:before {
+  content: "\e900";
+}
+.icon-gift:before {
+  content: "\e903";
+}
+.icon-shopping-cart:before {
+  content: "\e902";
 }

@@ -99,7 +99,8 @@
             height: 100%;
         }
 
-        .mask {
+        .tudou::before {
+            content: " ";
             display: none;
             position: absolute;
             top: 0;
@@ -109,7 +110,7 @@
             background: rgba(0, 0, 0, .3) url(../微信图片_20241106131128.png) no-repeat center;
         }
 
-        .tudou:hover .mask {
+        .tudou:hover::before {
             /* 当鼠标经过了tudou的时候，mask显现出来 */
             display: block;
         }
@@ -130,7 +131,7 @@
         </ul>
     </div>
     <div class="tudou">
-        <div class="mask"></div>
+        <!-- <div class="mask"></div> -->
         <img src="../lofter_1666024992076.jpg" alt="">
     </div>
 </body>
