@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div img {
+            /* 盒子位置 盒子外边距 2d转换移动 */
+            /* width: 200px; */
+            /* height: 200px;
+            background-color: pink; */
+            /* transform: translate(100px, 200px); */
+            /* transform: translateX(100px);
+            transform: translateY(100px); */
+            /* transform: rotate(45deg); */
+            /* 顺时针旋转45度 */
+            border-radius: 50%;
+            border: 5px solid pink;
+            transition: all 5s;
+        }
+
+        .first {
+            margin-left: 75px;
+            height: 300px;
+            width: 50px;
+            background-color: pink;
+        }
+
+        .last {
+            margin-left: 0px;
+            width: 200px;
+            height: 50px;
+            background-color: pink;
+        }
+
+
+        div img:hover {
+            transform: rotate(3600deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div><img src="下载.jpg" alt=""></div>
+    <div class="first"></div>
+    <div class="last"></div>
+</body>
+
+</html>
