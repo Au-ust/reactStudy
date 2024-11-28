@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        div {
+            /* margin-top: 300px; */
+            text-align: center;
+        }
+
         div img {
             /* 盒子位置 盒子外边距 2d转换移动 */
             /* width: 200px; */
@@ -16,9 +21,14 @@
             transform: translateY(100px); */
             /* transform: rotate(45deg); */
             /* 顺时针旋转45度 */
-            border-radius: 50%;
+            /* border-radius: 50%;
             border: 5px solid pink;
-            transition: all 5s;
+            transition: all 5s; */
+            /* transform-origin: 0 0; */
+        }
+
+        li {
+            list-style: none;
         }
 
         .first {
@@ -36,16 +46,252 @@
         }
 
 
-        div img:hover {
+        /* div img:hover {
             transform: rotate(3600deg);
+        } */
+
+        .qqq {
+            width: 200px;
+            height: 30px;
+            background-color: aqua;
+            position: relative;
+        }
+
+        .www {
+            position: absolute;
+            top: 8px;
+            right: 15px;
+            width: 10px;
+            height: 10px;
+            border-bottom: 1px solid #000;
+            border-right: 1px solid #000;
+            transform: rotate(45deg);
+        }
+
+        .iii {
+            /* overflow: hidden; */
+            width: 200px;
+            height: 200px;
+            border: 1px solid pink;
+            /* background-color: aqua; */
+            margin: 200px auto;
+        }
+
+        .iii::before {
+            display: block;
+            content: 'epi';
+            width: 100%;
+            height: 100%;
+            background-color: blueviolet;
+            /* transform: rotate(180deg); */
+            transform-origin: left bottom;
+            transition: all .4s;
+        }
+
+        .iii:hover::before {
+            /* transform: rotate(0deg); */
+            transform: scale(-2, -2);
+        }
+
+        /* li {
+            line-height: 30px;
+            margin: 0 10px;
+            float: left;
+            width: 30px;
+            height: 30px;
+            border: 1px solid pink;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all .4;
+        }
+
+        li:hover {
+            transform: scale(1.2);
+        } */
+
+        /* @keyframes move {
+            0% {
+                transform: translate(0px);
+            }
+
+            25% {
+                transform: translate(1000px, 0);
+            }
+
+            100% {
+                transform: translate(1000px, 500px);
+
+            }
+        }
+
+
+        div {
+            margin: 20px 20px;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            animation-name: move;
+            animation-duration: 10s;
+            animation-fill-mode: forwards;
+            animation: name duration timing-function delay iteration-count direction fill-mode;
+        }
+
+        div:hover {
+            animation-play-state: paused;
+        } */
+
+        /* .momo {
+            position: relative;
+            width: 1200px;
+            height: 1200px;
+            background: url(微信图片_20241125113021.jpg) no-repeat;
+            margin: 0 auto;
+        }
+
+        .eye {
+            position: absolute;
+            top: -157px;
+            left: 359px;
+            color: cyan;
+        }
+
+        .dotted {
+            width: 10px;
+            height: 10px;
+            background-color: #09f;
+            border-radius: 50%;
+        }
+
+        .eye div[class^="pulse"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            box-shadow: 0 0 12px #009dfd;
+            border-radius: 50%;
+            animation: pulse 1.2s;
+        }
+
+        @keyframes pulse {
+            0% {}
+
+            70% {
+                width: 40px;
+                height: 40px;
+                opacity: 1;
+            }
+
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        } */
+        /* .w {
+            overflow: hidden;
+            font-size: 20px;
+            width: 0;
+            height: 30px;
+            background-color: pink;
+            animation: w 4s steps(10) forwards;
+        }
+
+        @keyframes w {
+            0% {}
+
+            100% {
+                width: 10px;
+            }
+        } */
+
+        /* body {
+            perspective: 500px;
+        } */
+        /* 
+        .toushi {
+            margin: 200px auto;
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            transition: all 5s;
+        } */
+
+        /* .toushi:hover {
+            transform: rotateX(180deg);
+        } */
+        body {
+            perspective: 500px;
+        }
+
+        .box:hover {
+            transform: rotateX(-60deg);
+        }
+
+        .box {
+            transform-style: preserve-3d;
+            position: relative;
+            width: 200px;
+            height: 100px;
+            margin: 100px auto;
+        }
+
+        .box div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+        }
+
+        .box div:first-child {
+            background-color: blueviolet;
+            transform: rotateX(-90deg);
+        }
+
+        .box div:last-child {
+            background-color: aqua;
         }
     </style>
 </head>
 
 <body>
-    <div><img src="下载.jpg" alt=""></div>
+    <!-- <div><img src="下载.jpg" alt=""></div>
     <div class="first"></div>
     <div class="last"></div>
+    <div class="qqq">
+        <div class="www"></div>
+    </div> -->
+    <!-- <div class="iii"></div> -->
+    <!-- <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+        </ul>
+    </div> -->
+    <!-- <div></div>
+    <div class="momo">
+        <div class="eye">
+            
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+    </div> -->
+    <!-- <div class="w">我讨厌所有的实验课。</div> -->
+    <!-- <div class="toushi">杀杀杀杀杀杀杀杀杀杀杀杀杀杀杀</div> -->
+    <div class="box">
+        <div></div>
+        <div></div>
+    </div>
 </body>
 
 </html>
