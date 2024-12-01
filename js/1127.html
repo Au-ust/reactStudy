@@ -5,10 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+        } */
+        table {
+            width: 600px;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        tr {
+            height: 40px;
+            cursor: pointer;
+        }
+
+        table tr:nth-child(1) {
+            background-color: #ddd;
+        }
+
+        table tr:not(:first-child):hover {
+            background-color: #eee;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
 </head>
 
 <body>
+    <div></div>
+    <h4>学生列表</h4>
+    <table>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+        </tr>
+        <script>
+            let students = [
+                { name: '小明', age: 18, gender: '男', hometown: '河北省' },
+                { name: '小红', age: 19, gender: '女', hometown: '河南省' },
+                { name: '小刚', age: 17, gender: '男', hometown: '山西省' },
+                { name: '小丽', age: 18, gender: '女', hometown: '山东省' }
+            ]
+            for (let i = 0; i < students.length; i++) {
+                document.write(`
+                <tr>
+                <td>${i + 1}</td>
+                <td>${students[i].name}</td>
+                <td>${students[i].age}</td>
+                <td>${students[i].gender}</td>
+                <td>${students[i].hometown}</td>
+                </tr>
+            `)
+            }
+        </script>
+    </table>
+
     <script>
+
         // let brr = [1, 2, 55, 22, 44, 6]
         // brr.sort(function (a, b) {
         //     return a - b
@@ -69,23 +141,73 @@
         // console.log(false&&age++)
         // console.log(age)
 
-        let obj = {
-            uname: '小鱼',
-            age: '18',
-            talent: 'singing',
-            eating:function(){
-                document.write('order')
+        // let obj = {
+        //     uname: '小鱼',
+        //     age: '18',
+        //     talent: 'singing',
+        // eating: function () {
+        //     document.write('order')
+        // },
+        // drinking: function () {
+        //     document.write('cola')
+        // }
+        //}
+        // for (let k in obj) {
+        //     console.log(obj[k]);
+        // }
+        //     let arr=['111',222,'你好']
+        //     obj.hobby = 'swimming'
+        //     // console.log(obj);
+        //    for (let k in arr){
+        //     console.log(k);
+
+        //    }
+
+        // let students = [
+        //     { name: '小明', age: 18, gender: '男', hometown: '河北省' },
+        //     { name: '小红', age: 19, gender: '女', hometown: '河南省' },
+        //     { name: '小刚', age: 17, gender: '男', hometown: '山西省' },
+        //     { name: '小丽', age: 18, gender: '女', hometown: '山东省' }
+        // ]
+        // for (let i = 0; i < students.length; i++) {
+        //     console.log(students[i].name)
+        //     console.log(students[i].gender)
+        // }
+
+        // console.log(Math.floor(-20.5))-20
+        // let arr = ['赵云', '黄忠', '关羽', '张飞', '马超', '刘备', '曹操']
+        // let random = Math.floor(Math.random() * arr.length);
+        // document.write(arr[random])
+        // arr.splice(random,1)删除刚刚选中的值
+        function getRandomColor(flag = true) {
+            if (flag) {
+                let str = '#'
+                let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+                for (let i = 1; i <= 6; i++) {
+                    str += arr[Math.floor(Math.random() * arr.length)]
+                }
+                return str
+            } else {
+                let r = Math.floor(Math.random() * 255)
+                let g = Math.floor(Math.random() * 255)
+                let b = Math.floor(Math.random() * 255)
+                return `(${r},${g},${b})`
             }
-            drinking:function
         }
-        obj.hobby = 'swimming'
-        console.log(obj);
+        // color = getRandomColor(prompt('请输入flag：'))
 
-
-
-
-
+        const div = document.querySelector('div')
+        div.style.backgroundColor = getRandomColor(true)
     </script>
 </body>
 
 </html>
+
+
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
