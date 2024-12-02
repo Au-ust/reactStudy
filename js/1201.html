@@ -1,15 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box {
+            height: 400px;
+            width: 400px;
+            background-color: aquamarine;
+            margin: 10px auto;
+        }
+    </style>
 </head>
+
 <body>
-    <div>123</div>
+    <!-- <ul>
+        <li>li 1</li>
+        <li>li 2</li>
+        <li>li 3</li>
+        <li>li 4</li>
+        <li>li 5</li>
+    </ul>
+    <div class="box">123</div> -->
+    <!-- <ul class="nav">
+        <li>我的首页</li>
+        <li>产品介绍</li>
+        <li>联系方式</li>
+    </ul> -->
+    <!-- <div class="nav" data-id="1">
+       
+    </div> -->
+    <!-- <img src="/lofter_1666024992076.jpg" alt=""> -->
+    <input type="checkbox" checked>
+    <div class="nav" data-id="1">1</div> 
+    <div class="nav" data-id="2">2</div> 
+    <div class="nav" data-id="3">3</div> 
+    <div class="nav" data-id="4">4</div> 
+    <div class="nav" data-id="5">5</div> 
     <script>
-        const div = document.querySelector('div')
-        console.dir(div)
+        const one=document.querySelector('div')
+        console.log(one.dataset.id)//自定义属性里的id属性
+        //     const lis=document.querySelectorAll('.nav li')
+        //    for(let i=0;i<lis.length;i++){
+        //      console.log(lis[i].textContent)
+        //    }
+        // const box = document.querySelector('.box')
+        // console.dir(box)
+        // const lis = document.querySelectorAll('ul li')
+        // console.log(lis)
+        // li.style.color = 'red'
+        // const box=document.querySelector('.box')
+        // box.innerText = '我是一个盒子'
+        // box.innerHTML = '<strong>我是一个盒子</strong>'
+
+        // const
+        //     personArr = ['周杰伦', '刘德华', '周星驰', 'Pink老师', '张学友']
+        // for (let i = 0; i < 3; i++) {
+        //     let random = Math.floor(Math.random() * personArr.length)
+        //     let name = personArr[random]
+        //     const box = document.querySelector('.box')
+        //     box.innerHTML = `<span>${i+1}等奖：${name}</span>`
+        //     personArr.splice(random, 1)
+        //     console.log(personArr);
+        // }
+        // const img = document.querySelector('img')
+        // img.src = '../微信图片_20241105174427.jpg'
+        // box = document.querySelector('.box')
+        // box.style.width = '200px'
+        // box.style.height = '200px'//字符串，引号里带单位px
+        // box.style.backgroundColor = 'pink'//采用小驼峰
+        // box.style.border = '2px solid blue'
+        // const div = document.querySelector('div')
+        // div.classList.toggle('box')
+        // div.className = 'box'
+        // const uname=document.querySelector('input')
+        // uname.value='励志轩我要疯了'
+        // console.log(uname.value)
+        // const ipt = document.querySelector('input')
+        // console.log(ipt.checked)
+        // ipt.checked=true
     </script>
 </body>
+
 </html>
