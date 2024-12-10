@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrapper {
+            min-width: 400px;
+            max-width: 800px;
+            display: flex;
+            justify-content: flex-end;
+            margin: 20px 20px;
+        }
+
+
+        .wrapper textarea {
+            outline: none;
+            border-color: transparent;
+            resize: none;
+            /* 去除右下角的小三角 */
+            background: #f5f5f5;
+            border-radius: 4px;
+            flex: 1;
+            padding: 10px;
+            transition: all 0.5s;
+            height: 30px;
+        }
+
+        .wrapper textarea:focus {
+            border-color: #e4e4e4;
+            background-color: #fff;
+            height: 50px;
+        }
+
+        .wrapper button {
+            background: #00aeec;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            margin-left: 10px;
+            width: 70px;
+            cursor: pointer;
+        }
+
+        .wrapper .total {
+            color: #999;
+            margin-right: 80px;
+            transition: all 0.5s;
+            opacity: 0;
+            margin-top: 5px;
+        }
+
+        .list {
+            min-width: 400px;
+            max-width: 800px;
+            display: flex;
+        }
+
+        .list .item {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: url(/js/images/微信图片_20241209195234.png) no-repeat center / cover;
+            margin-right: 20px;
+        }
+
+        .list .item p {
+            margin: 0;
+        }
+
+        .list .item .info {
+            flex: 1;
+            border-bottom: 1px dashed #e4e4e4;
+            padding-bottom: 10px;
+        }
+
+        .list .item .name {
+            color: #FB7299;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .list .item .text {
+            color: #333;
+            padding: 10px 0;
+        }
+
+        .list .item .time {
+            color: #999;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <i class="avatar"></i>
+        <textarea id="tx" placeholder="进来和up唠会嗑呗~"></textarea>
+        <button>发布</button>
+    </div>
+    <div class="wrapper">
+        <span class="total">0/200字</span>
+    </div>
+    <div class="list">
+        <div class="item" style="display: none;">
+            <!-- 隐藏 -->
+            <div class="avatar"></div>
+            <div class="info">
+                <p class="name">August</p>
+                <p class="text"></p>
+                <p class="time"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const tx = document.querySelector('#tx')
+        const total = document.querySelector('.total')
+        const item = document.querySelector('.item')
+        const text = document.querySelector('.text')
+        const list = document.querySelector('.list')
+
+        //1.文本域获得焦点，total显示出来
+        tx.addEventListener('focus', function () {
+            total.style.opacity = 1
+        })
+        //2.文本域失去焦点，total隐藏出来
+        tx.addEventListener('blur', function () {
+            total.style.opacity = 0
+        })
+        //3.检测用户输入
+        tx.addEventListener('input', function () {
+            //console.log(tx.value.length)获取长度
+            total.innerHTML = `${tx.value.length}/200字`
+        })
+        //4.按下回车发布评论
+        tx.addEventListener('keyup', function (e) {
+            //按下回车键触发
+            if (e.key === 'Enter') {
+                //console.log(11);
+                //trim（）防止用户两边输入空格或者全为空格，去除空格
+                if (tx.value.trim()) {
+                    item.style.display = 'flex'
+                    text.innerHTML = tx.value.trim()
+                    //console.log(tx.value);
+                }
+                //按下回车的同时清空文本域
+                tx.value = ''
+                total.innerHTML = `0/200字`
+
+
+            }
+        })
+    </script>
+</body>
+
+</html>

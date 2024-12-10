@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            /* 给父盒子一个flex */
+            width: 800px;
+            height: 500px;
+            background-color: pink;
+            flex-flow: row wrap;
+            align-items: flex-end;
+        }
+
+        div span:nth-child(1) {
+            width: 150px;
+            height: 100px;
+            background-color: cadetblue;
+        }
+
+        div span:nth-child(2) {
+            width: 150px;
+            height: 100px;
+            background-color: rgb(187, 105, 146);
+            align-self: flex-start;
+            order:-1;
+        }
+
+        div span:nth-child(3) {
+            width: 150px;
+            height: 100px;
+            background-color: rgb(214, 231, 165);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 补充：flex布局 -->
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>

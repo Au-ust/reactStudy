@@ -5,22 +5,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .slider {
+            width: 560px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            width: 100%;
+            height: 320px;
+        }
+
+        .slider-wrapper img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .slider-footer {
+            height: 80px;
+            background-color: rgb(100, 67, 68);
+            padding: 12px 12px 0 12px;
+            position: relative;
+        }
+
+        .slider-footer p {
+            margin: 0;
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .slider-indicator {
+            display: flex;
+            align-items: center;
+        }
+
+        .slider-indicator li {
+            width: 8px;
+            height: 8px;
+            margin: 4px;
+            border-radius: 50%;
+            background: #fff;
+            opacity: 0.4;
+            cursor: pointer;
+        }
+
+        .slider-footer .toggle {
+            position: absolute;
+            right: 0;
+            top: 12px;
+            display: flex;
+        }
+
+        .slider-footer .toggle button {
+            margin-right: 12px;
+            width: 28px;
+            height: 28px;
+            appearance: none;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .slider-indicator li.active {
+            width: 12px;
+            height: 12px;
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
-<div class="slider">
-    <div class="slider-wrapper">
-        <img src="../" alt="">
+    <div class="slider">
+        <div class="slider-wrapper">
+            <img src="../../images/slider01.jpg" alt="">
+        </div>
+        <div class="slider-footer">
+            <p>真正的jo厨出现了！</p>
+            <ul class="slider-indicator">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="toggle">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
+        </div>
     </div>
-</div>
     <script>
-    const sliderData = [
-            { url: '../images/slider01.jpg', title: '真正的jo厨出现了！', color: 'rgb(36, 31, 33)' },
-            { url: '../images/slider02.jpg', title: '李玉刚：让世界通过B站看到东方大国文化', color: 'rgb(139, 98, 66)' },
-            { url: '../images/slider03.jpg', title: '快来分享你的寒假日常吧~', color: 'rgb(67, 90, 92)' },
-            { url: '../images/slider04.jpg', title: '哔哩哔哩小年YEAH', color: 'rgb(166, 131, 143)' },
+        const sliderData = [
+            { url: '../../images/slider01.jpg', title: '真正的jo厨出现了！', color: 'rgb(36, 31, 33)' },
+            { url: '../../images/slider02.jpg', title: '李玉刚：让世界通过B站看到东方大国文化', color: 'rgb(139, 98, 66)' },
+            { url: '../../images/slider03.jpg', title: '快来分享你的寒假日常吧~', color: 'rgb(67, 90, 92)' },
+            { url: '../../images/slider04.jpg', title: '哔哩哔哩小年YEAH', color: 'rgb(166, 131, 143)' },
         ]
-        </script>
+        //获取元素
+        const img = document.querySelector('.slider-wrapper img')
+        const p = document.querySelector('.slider-footer p')
+        const footer = document.querySelector('.slider-footer ')
+        let i = 0
+        //点击右侧按钮更换图片的操作
+        const next = document.querySelector('.next')
+        next.addEventListener('click', function () {//事件名称直接当匿名函数的名称传给next
+            //console.log(11);
+            i++
+            if (i >= sliderData.length) i = 0
+            toggle(i)
+        })
+        //点击左侧按钮更换图片的操作
+        const prev = document.querySelector('.prev')
+        prev.addEventListener('click', function () {
+            //console.log(22);
+            i--
+            if (i < 0) i = sliderData.length - 1
+            toggle(i)
+        })
+        //公共代码
+        function toggle(i) {
+            img.src = sliderData[i].url
+            p.innerHTML = sliderData[i].title
+            footer.style.backgroundColor = sliderData[i].color
+            document.querySelector('.slider-indicator .active').classList.remove('active')
+            document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+        }
+        //开启定时器
+        let timeId = setInterval(function () {
+            next.click()//调用按右边按钮的方法吗，功能是一样的
+            // i++
+            // if (i >= sliderData.length) i = 0
+            // img.src = sliderData[i].url
+            // p.innerHTML = sliderData[i].title
+            // //删除之前的active效果
+            // document.querySelector('.slider-indicator .active').classList.remove('active')
+            // document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+        }, 1000)
+        const slider = document.querySelector('.slider')
+        img.addEventListener('mouseenter', function () {
+            clearInterval(timeId)
+        })
+        img.addEventListener('mouseleave', function () {
+            timeId = setInterval(function () {
+                next.click()
+            }, 1000)
+        })
+        //本来想做一个点击小圆点传输到对应图片的功能，但是发现是体力劳动，要给每个小圆点添加监听事件遂放弃
+        //我来写了
+        const li = document.querySelectorAll('ul li')
+        for (let n = 0; n < sliderData.length; n++) {
+            console.log(li)
+            li[n].addEventListener('click', function () {
+                // console.log(`鼠标点击第${i+1}个`)
+                toggle(n)
+                clearInterval(timeId)
+                i = n
+                timeId = setInterval(function () {
+
+                    next.click()
+                }, 1000)
+            })
+        }
+    </script>
 </body>
 
 </html>
