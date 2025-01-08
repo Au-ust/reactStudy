@@ -9,8 +9,8 @@
         div {
             display: flex;
             /* 给父盒子一个flex */
-            width: 800px;
-            height: 500px;
+            width: 500px;
+            height: 3000px;
             background-color: pink;
             flex-flow: row wrap;
             align-items: flex-end;
@@ -27,7 +27,7 @@
             height: 100px;
             background-color: rgb(187, 105, 146);
             align-self: flex-start;
-            order:-1;
+            order: -1;
         }
 
         div span:nth-child(3) {
@@ -35,16 +35,93 @@
             height: 100px;
             background-color: rgb(214, 231, 165);
         }
+
+        div p {
+            width: 150px;
+            height: 100px;
+            background-color: rgb(165, 227, 231);
+        }
+
+        .box {
+            margin: 200px 200px;
+            overflow: scroll;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+
+        .xianshi {
+            position: absolute;
+            top: 500px;
+            height: 300px;
+            width: 300px;
+            background-color: blue;
+            opacity: 0;
+        }
     </style>
 </head>
 
 <body>
+    <div class="xianshi">显示</div>
     <!-- 补充：flex布局 -->
     <div>
         <span>1</span>
         <span>2</span>
         <span>3</span>
+        <p>我不参与事件委托</p>
     </div>
+    <div class="box">
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+        我恨你们所有人
+
+    </div>
+    <script>
+        // const box = document.querySelector('div')
+        // box.addEventListener('click', function (e) {
+        //     //alert('点上了')
+        //     //console.log(e);
+        //     if (e.target.nodeName === 'SPAN')
+        //         e.target.style.backgroundColor = 'purple'
+        // })
+        // window.addEventListener('scroll', function () {
+        //     console.log('页面滚动了');
+
+        // })
+        // const box = document.querySelector('.box')
+        // box.addEventListener('scroll', function () {
+        //     console.log('滚动了')
+
+        // })
+        const elevator = document.querySelector('.xianshi')
+        window.addEventListener('scroll', function () {
+            //console.log('页面滚动了');
+            //console.log(document.documentElement.scrollTop)
+            let top = document.documentElement.scrollTop
+            if (top >= 300) {
+                elevator.style.opacity = 1
+            }
+        })
+    </script>
 </body>
 
 </html>

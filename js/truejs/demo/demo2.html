@@ -97,10 +97,10 @@
         <div class="slider-footer">
             <p>真正的jo厨出现了！</p>
             <ul class="slider-indicator">
-                <li class="active"></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li class="active" data-id="0"></li>
+                <li data-id="1"></li>
+                <li data-id="2"></li>
+                <li data-id="3"></li>
             </ul>
             <div class="toggle">
                 <button class="prev">&lt;</button>
@@ -166,20 +166,35 @@
         })
         //本来想做一个点击小圆点传输到对应图片的功能，但是发现是体力劳动，要给每个小圆点添加监听事件遂放弃
         //我来写了
-        const li = document.querySelectorAll('ul li')
-        for (let n = 0; n < sliderData.length; n++) {
-            console.log(li)
-            li[n].addEventListener('click', function () {
-                // console.log(`鼠标点击第${i+1}个`)
-                toggle(n)
-                clearInterval(timeId)
-                i = n
-                timeId = setInterval(function () {
+        // 循环写法
+        // const li = document.querySelectorAll('ul li')
+        // for (let n = 0; n < sliderData.length; n++) {
+        //     console.log(li)
+        //     li[n].addEventListener('click', function () {
+        //         // console.log(`鼠标点击第${i+1}个`)
+        //         toggle(n)
+        //         clearInterval(timeId)
+        //         i = n
+        //         timeId = setInterval(function () {
 
-                    next.click()
-                }, 1000)
-            })
-        }
+        //             next.click()
+        //         }, 1000)
+        //     })
+        // }
+        //事件委托写法
+        const ul = document.querySelector('ul')
+        ul.addEventListener('click', function (e) {
+            //console.log(e.target.dataset.id);
+            // 隐式转换，转换为数字型
+            const id =+e.target.dataset.id
+            toggle(id)
+            clearInterval(timeId)
+            i = id
+            timeId = setInterval(function () {
+
+                next.click()
+            }, 1000)
+        })
     </script>
 </body>
 

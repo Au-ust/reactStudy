@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: rebeccapurple;
+            text-align: center;
+            color: #fff;
+            line-height: 80px;
+            font-size: 30px;
+            transition: all .3s;
+        }
+
+        .box {
+            overflow: hidden;
+            width: 1000px;
+            height: 3000px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .sk {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            margin-top: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">我是顶部导航栏</div>
+    <div class="box">
+        <div class="sk"></div>
+    </div>
+    <script>
+        const sk = document.querySelector('.sk')
+        const section = document.querySelector('.section')
+        const box = document.querySelector('.box')
+        window.addEventListener('scroll', function () {
+            const n = document.documentElement.scrollTop
+            if (n >= sk.offsetTop) {
+                section.style.top = 0
+            }else {
+                section.style.top = '-80px'
+            }
+        })
+    </script>
+</body>
+
+</html>
