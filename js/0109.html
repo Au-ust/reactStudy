@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <a href="http://www.itcast.cn">支付成功<span>5</span>秒后自动跳转到首页</a> -->
+    <!-- <img src="./images/slider01.jpg" alt=""> -->
+    <script>
+        // const img = document.querySelector('img')
+        // setTimeout(function () {
+        //     img.style.display = 'none'
+        // }, 5000)
+        // console.log(location);
+        // location.href="http://baidu.com"
+        // const a = document.querySelector('a')
+        // let num=5
+        // let n=setInterval(function () {
+        //     num--
+        //     a.children[0].innerHTML=`${num}`
+        //     //如果num==0，停止定时器，跳转
+        //     if(num===0){
+        //         clearInterval(n)
+        //         //跳转
+        //         location.href='http://www.itcast.cn'
+        //     }
+        // }, 1000)
+        // console.log(navigator);
+        // localStorage.setItem('zby','sb')
+        // localStorage.removeItem('zby')
+        const obj={
+            uanme:'zby',
+            age:19,
+            gender:'男'
+        }
+        localStorage.setItem('obj',JSON.stringify(obj))
+        console.log(JSON.parse(localStorage.getItem('obj')));
+        
+    </script>
+</body>
+
+</html>
