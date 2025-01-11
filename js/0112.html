@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>
+        发布
+    </button>
+    <div></div>
+    <script>
+        const tx = document.querySelector('textarea')
+        const btn = document.querySelector('button')
+        const div = document.querySelector('div')
+        btn.addEventListener('click', function () {
+            // console.log(tx.value)
+              div.innerHTML = tx.value.replace(/wcnm/g,'我上早八')
+          
+
+        })
+        // const str='我有三只小兔子，分别是阿米娅兔兔，特雷西娅兔兔，德克萨斯兔兔'
+        // //定义正则表达式
+        // const reg=/兔兔/
+        // //是否匹配
+        // console.log(reg.exec(str));
+        // const str = 'gigity my name is gigity,gigity,gigity'
+        // console.log(/gigity/.test(str));
+        // console.log(/^gigity/.test(str));
+        // console.log(/gigity$/.test(str));
+        // console.log(/^gigity$/.test(str))
+        // console.log(/^gigity$/.test('gigity'))
+        // const str = 'ygigitygigitygigitygigity'
+
+        // console.log(/^y*$/.test(''));//true
+        // console.log(/^y+$/.test(''));//
+        // console.log(/^y?$/.test(''));//true
+        // console.log(/^gigity?$/.test(str));//false
+        // console.log(/y?$/.test(str));//true
+        // console.log(/^gigity/.test(str));
+        // console.log(/^gigity/.test(str));
+        // console.log('-----------------------')
+        // console.log(/^y{3,4}$/.test('yy'));//false
+        // console.log(/^y{3,4}$/.test('yyy'));//true
+        // console.log(/^y{3,4}$/.test('yyyy'));//true
+        // console.log(/^y{3,4}$/.test('yyyyy'));//false
+
+    </script>
+</body>
+
+</html>
