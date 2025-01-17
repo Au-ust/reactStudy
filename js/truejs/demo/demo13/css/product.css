@@ -67,6 +67,7 @@
   z-index: 999;
   background-color: #fff;
   display: none;
+  /* 给一个默认图片 */
   background-image: url(../images/1.jpg);
   background-size: 800px 800px;
 }
