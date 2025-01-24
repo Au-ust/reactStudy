@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        // let obj = {
+        //     1: "hdcms",
+        //     "1": "houdunren"
+        // };
+        // //console.log(obj);//1:"houdunren"
+
+        // console.log(obj);
+        // let hd = {
+        //     [obj]: "后盾人"
+        // };
+        // //console.log(hd.toString());
+        // console.log(hd[obj.toString()]);
+        // let set = new Set([1, 2, 3, 4, 5])
+        // console.log(set.delete(1))//true，删掉了
+        // console.log(set.has(1))//false，没有1
+        // console.log(set.size)//大小为4
+        // console.log(set.clear())//清空，没有返回值，所以在这里打印为undefined
+        // console.log(set.values())//SetIterator {}
+
+        // let set = new Set(["hdcms", "houdunren"]);
+        // console.log(Array.from(set))//['hdcms', 'houdunren']
+        // console.log([...set])//['hdcms', 'houdunren']
+        // let set = new Set("123456789")
+        // console.log([...set])
+
+        // set = new Set([...set].filter(item=> item < 5))
+        // console.log(set)//Set(4) {'1', '2', '3', '4'}
+        // let arr = [1, 2, 3, 4, 1, 2, 3, 4, 1]
+        // arr = [...new Set(arr)]
+        // console.log(arr)// [1, 2, 3, 4]
+        // let set = new Set(["hdcms", "houdunren"]);
+        // set.forEach(function (value, key, set) {
+        //     console.log(set);
+        // })//{ 'hdcms', 'houdunren' }
+        // let set = new Set(["hdcms", "houdunren"]);
+        // for (const value of set) {
+        //     console.log(value);
+        // }//hdcms,houdunren
+        // console.log(set.keys())//{'hdcms', 'houdunren'}
+        // console.log(set.values())//{'hdcms', 'houdunren'}
+        // console.log(set.entries())//{'hdcms' => 'hdcms', 'houdunren' => 'houdunren'}
+
+        // let set1 = new Set([1, 2, 3, 4, 5])
+        // let set2 = new Set([1, 2, 4, 6, 9])
+        // console.log(new Set(
+        //     [...set1].filter(function (item) {
+        //         return !set2.has(item)
+        //     })
+        // ));
+        // console.log(new Set([...set1, ...set2]));
+
+        // let nodes = new WeakSet();
+        // let divs = document.querySelectorAll("div");
+        // divs.forEach(function (item) {
+        //     nodes.add(item);
+        // });
+        // nodes.delete(divs[0]);
+        // console.log(nodes.has(divs[0]));
+        // console.log(nodes);
+
+        let hd = { name: "后盾人" };
+        let edu = hd;
+        let set = new WeakSet();
+        set.add(hd);
+
+        hd = null;
+        edu = null;
+        console.log(set)
+
+    </script>
+</body>
+
+</html>

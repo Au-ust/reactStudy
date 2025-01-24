@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="http://doc.houdunren.com" onsubmit="return post()">
+        接受协议:
+        <input type="checkbox" name="agreement" error="请接受接受协议" />
+        我是学生:
+        <input type="checkbox" name="student" error="网站只对学生开放" />
+        <input type="submit" />
+    </form>
+    <!-- <div name="后盾人">houdunren.com</div>
+    <div name="开源内容管理系统">hdcms.com</div> -->
+    <script>
+        let map = new WeakMap('孩子们我是字符串', '字符串会报错')
+
+
+
+        // function post() {
+        //     let map = new Map()
+        //     let inputs = document.querySelectorAll('[error]')
+        //     inputs.forEach(item => {
+        //         map.set(item, {
+        //             error: item.getAttribute('error'),
+        //             status: item.checked
+        //         })
+        //     })
+        //     return [...map].every(([elem, config]) => {//如果所有元素都满足条件，every 返回 true
+        //         config.status || alert(config.error)//短路逻辑或
+        //         return config.status
+        //     })
+        // }
+
+        // let map = new Map()
+        // document.querySelectorAll("div").forEach(item => {
+        //     map.set(item, {
+        //         content: item.getAttribute("name")
+        //     })//通过set方法当对象放进map里
+        // })
+        // console.log(map)
+
+        // //此时遍历map就可以了，不用遍历div
+        // map.forEach((config, elem) => {
+        //     elem.addEventListener("click", () => {
+        //         alert(config.content)//点击弹出alert
+        //     })
+        // })
+        // let map = new Map()
+        // map.set('name', '我是个字符串')
+        // map.set(function () { }, '我是个函数')
+        // map.set({},'我是个对象')
+        // console.log(map);
+        // let map = new Map([['我是个', '数组'], ['我是键', '我是值']])
+        // map.set('名字','荷叶饭').set('hello','world')
+        // console.log(map)
+        // let str = "abc";
+        // console.log(str.toLowerCase().substr(1, 1));
+        // let obj = {
+        //     name: '荷叶饭'
+        // }
+        // let arr = [['我是个', '数组'], ['我是键', '我是值']]
+        // let map = new Map()
+        // map.set(obj, '我是个对象')
+        // map.set('孩子们我真的是个数组', arr)
+        // // for (const [key, value] of map) {
+        // //     console.log(key, value)
+        // // }
+        // //console.log([...map])
+
+        // let newArr = [...map].filter(item => {
+        //     return item[1].includes('我是个')
+        // })
+        // console.log(newArr)
+
+        // console.log([...map.values()])
+        // console.log([...map.keys()])
+
+        // map.forEach((key, value) => {
+        //     console.log(key, value);
+        // });
+        // for (const [key, value] of map.entries()) {
+        //     console.log(key, value)
+        // }
+        //console.log(map.has(obj))//true
+
+        // console.log(map.get({
+        //     name: '荷叶饭'
+        // }))//undefined
+        // console.log(map.delete(obj));
+
+    </script>
+</body>
+
+</html>

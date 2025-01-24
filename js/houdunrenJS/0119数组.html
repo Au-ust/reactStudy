@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vh;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #34495e;
+        }
+
+        div {
+            font-size: 4em;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #9b59b6;
+        }
+
+        div>span {
+            position: relative;
+            display: inline-block;
+        }
+
+        .color {
+            animation-name: color;
+            animation-duration: 1s;
+            animation-iteration-count: 2;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+        }
+
+        @keyframes color {
+            50% {
+                color: #f1c40f;
+                transform: scale(2);
+            }
+
+            to {
+                color: #e74c3c;
+                transform: scale(0.5);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>想吃火锅想吃烧烤</div>
+    <!-- <div>想吃烧烤</div> -->
+    <!-- <input type="text" name="title" /> -->
+    <span></span>
+    <script>
+        // let keywords = ["杀", "死"];
+        // let title = document.querySelector('[name="title"]');
+        // title.addEventListener("keyup", function () {
+        //     const res = keywords.some(keyword => {
+        //         return this.value.indexOf(keyword) != -1;
+        //     });
+        //     document.querySelector("span").innerHTML = res
+        //         ? "不能包含" + keywords.join(",") + "关键词"
+        //         : ''
+        // });
+        // const arr = [1, 2, 3, 4]
+        // console.table(arr)
+
+        // let array = [["hdcms"], ["houdunren", "cms"]];
+        //  console.log(array[1][1]);//cms
+        // let lessons = [{ name: "php", click: 33 }, { name: "js", click: 99 }];
+        // console.log(lessons[1].name);//js
+        // let arr = new Array(6)
+        // console.table(arr.length)//new Array(6)表示生成一个长度为6的空白数组
+        // let arr1 = new Array(1, 2, 3, 4, 5, 6)
+        // console.table(arr1)//而输入一串数字则生成一个数组
+        // let arr2 = Array.of(6)
+        // console.table(arr2)//Array.of(6)表示生成一个长度为1,值为6的数组
+
+        // console.log(Array.isArray([]));//true
+        // const arr = [1, 2, 3]
+        // console.log(arr)
+        // console.log(String(arr))
+        // console.log(arr.toString())
+        // console.log(arr.join(','))
+        // const str = '想,品客老师的,第二天'
+        // console.log(str.split(","))//['想', '品客老师的', '第二天']
+        // console.log(Array.from(str))//['想', ',', '品', '客', '老', '师', '的', ',', '第', '二', '天']
+
+        // let div = document.querySelectorAll('div')
+        // console.log(
+        //     Array.from(div, function (item) {
+        //         item.style.backgroundColor = 'pink'
+        //     })
+        // )
+        // let arr = ['我想吃', '火锅']
+        // let hd = ['我也想吃', '麦麦']
+        // for (const v of hd) {
+        //     arr.push(v)
+        // }
+        // console.table(arr)
+        // arr = [...arr, ...hd]
+        // console.table(arr)
+
+        // function sum(...args) {
+        //     // console.log(args);
+        //     return args.reduce((s, v) => {
+        //         return (s += v);
+        //     }, 0);
+        // }
+        // console.log(sum(1, 2, 34, 54, 5));
+
+        // let arr = [1, 2, 3, 4, 5]
+        // // let arr1= arr.slice(1, 3)
+        // let arr1=arr.splice(arr.length,0,'js我恨你')//在末尾增加'js我恨你'
+        // console.log(arr1)//[]
+        // console.log(arr)// [1, 2, 3, 4, 5, 'js我恨你']
+
+        // function move(arr, from, to) {
+        //     if (from < 0 || to >= arr.length) {
+        //         console.log('参数错误')
+
+        //     }
+        //     const newArr = [...arr]
+        //     let item = newArr.splice(from, 1)//注意splice()的返回值item是个数组
+        //     newArr.splice(to, 0, ...item)//所以在这里要使用展开运算符
+        //     return newArr
+        // }
+        // let array = [1, 2, 3, 4, 999]
+        // console.table(move(array, 4, 0))
+
+        // let arr = [1, 2, 3]
+        // let hd = arr
+        // hd= []
+        // console.log(arr);//[1, 2, 3]
+        // console.log(hd);//[]
+        // //这种情况是重新开辟了一块新内存，为空，hd指向了新内存，所以arr的值不受影响
+
+        // let arr = [1, 2, 3]
+        // let hd = [999, 666]
+        // arr =[...arr,...hd]
+        // console.table(arr)
+
+        // let arr = [1, 2, 3, 4]
+        // console.log(arr.includes(2));//true
+
+        // console.log(arr.copyWithin(2, 0, 3));//[1, 2, 1, 2]
+        // console.log(arr.indexOf(0));
+
+        // let arr = [1, 2, 3, 4, 5];
+        // let res = arr.find(function (item) {
+        //     console.log(item);//item是数组里的值
+        //     return item == 2;//找到2了返回2，没找到2的话返回undefined
+
+        // });
+        // console.log(res);
+
+        // let lessons = [{ name: "js" }, { name: "css" }, { name: "mysql" }];
+        // //console.log(lessons.includes({ name: "css" }));//false
+        // let status = lessons.find(function (item) {
+        //     return item.name == "css";
+        // });
+        // console.log(status);
+        // let lessons = [{ name: "js" }, { name: "css" }, { name: "mysql" }];
+        // let index = lessons.findIndex(function (item) {
+        //     return item.name == "mysql";
+        // });
+        // console.log(index)//2，返回的是下标
+
+        // function find(array, callback) {
+        //     for (const value of array) {
+        //         if (callback(value)) return value;
+        //     }
+        //     return undefined;
+        // }
+        // let arr = [1, 2, 3, 4, 5];
+        // console.log(
+        //     find(arr, function (item) {
+        //         return item == 22;
+        //     })
+        // );
+        // Array.prototype.findValue = function (callback) {
+        //     for (const value of this) {
+        //         if (callback(value)) return value;
+        //     }
+        //     return undefined;
+        // };
+        // const res = arr.findValue(function (item) {
+        //     return item == 223;
+        // });
+        // console.log(res);
+        // let arr = [44, 2, 5, 6, 11, 66, 88, 22, 1]
+        // console.log(arr.sort((a, b) => b - a));//[88, 66, 44, 22, 11, 6, 5, 2, 1]
+
+        // let arr = [1, 2, 3, 4, 5]
+        // for (let value of arr) {
+        //     value += 10
+        // }
+        // console.log(arr)//[1, 2, 3, 4, 5],不改变arr本身
+
+        // let lessons = [
+        //     { title: "媒体查询响应式布局", category: "css" },
+        //     { title: "FLEX 弹性盒模型", category: "css" },
+        //     { title: "MYSQL多表查询随意操作", category: "mysql" }
+        // ];
+        // for (let i = 0; i < lessons.length; i++) {
+        //     lessons[i].title = `我被for循环修改过了${lessons[i].title}`;
+        // }
+        // console.table(lessons);
+        // for (const value of lessons) {
+        //     value.title = `我被for of修改了${value.title}`;
+        // }
+        // console.table(lessons);
+
+        // let div = document.querySelectorAll("div");
+        // div.forEach(function (item) {
+        //     item.addEventListener("click", function () {
+        //         this.classList.toggle("disable");
+        //     });
+        // });
+
+        //let arr = ['cnmjs', 'whnjs']
+        // let values = arr.values()
+        // while (({ value, done } = values.next()) && done === false) {
+
+        //     console.log(value, done)
+        // }
+        //cnmjs false
+        //whnjs false
+
+
+        // console.log(keys.next())
+        // console.log(keys.next())
+        // console.log(keys.next())
+
+        // let values = arr.values();
+        // for (const values of arr.values()) {
+        //     console.log(values);//cnmjs whnjs
+        // }
+        // let keys = arr.keys();
+        // for (const key of arr.keys()) {
+        //     console.log(key);//0 1
+        //}
+        // let entries = arr.entries();
+        // for (const [key, value] of entries) {
+        //     console.log(key, value)
+        //     //0 'cnmjs'
+        //     //1 'whnjs'
+        // }
+        // let {
+        //     done,
+        //     value: [a, b]
+        // } = entries.next();
+        // console.log(a, b);
+
+        // const stu = [
+        //     { name: '小红', 模电: 98 },
+        //     { name: '小张', 模电: 56 },
+        //     { name: '小蓝', 模电: 76 },
+        // ]
+        // const res = stu.some(function (item) {
+        //     return item.模电 < 60
+        // })
+        // console.log(res ? '有同学没及格' : '大家都及格了')//有同学没及格
+
+
+        // let lessons = [
+        //     { title: "媒体查询响应式布局", category: "css" },
+        //     { title: "FLEX 弹性盒模型", category: "css" },
+        //     { title: "MYSQL多表查询随意操作", category: "mysql" }
+        // ];
+        // const cssLessons = lessons.filter(function (lesson) {
+        //     return lesson["category"] == "css";
+        // });
+        // console.table(cssLessons);
+
+        // let hd = [1, 2, 3, 4];
+        // function filter(array, callback) {
+        //     let newArray = [];
+        //     for (const value of array) {
+        //         if (callback(value) === true) {
+        //             newArray.push(value);
+        //         }
+        //     }
+        //     return newArray;
+        // }
+        // console.log(
+        //     filter(hd, function (value) {
+        //         return value > 2;
+        //     })
+        // );//[3, 4]
+
+        // let lessons = [
+        //     { title: "媒体查询响应式布局", category: "css" },
+        //     { title: "FLEX 弹性盒模型", category: "css" },
+        //     { title: "MYSQL多表查询随意操作", category: "mysql" }
+        // ];
+        // let hd = lessons.map(function (value) {
+        //     value.click = 100
+        //     return value
+        // });
+        // console.table(hd);
+        // console.table(lessons);
+        // let arr = ["hdcms", "houdunren"];
+        // let hd = arr.map(function(value, index, arr) {
+        //   value = `后盾人 -${value}`;
+        //   return value;
+        // });
+        // console.table(arr);
+        // console.table(hd);
+
+        // let arr = [1, 2, 3, 1, 1];
+        // function arrayCount(array, item) {
+        //     return array.reduce(function (total, cur) {
+        //         total += item == cur ? 1 : 0;//如果后面遍历的cur==item(在这里是1)则total+=1，如果cur!=item，total+=0
+        //         return total;
+        //     }, 0);
+        // }
+        // console.log(arrayCount(arr, 1));
+
+        // let cart = [
+        //     { name: "iphone", price: 12000 },
+        //     { name: "imac", price: 25000 },
+        //     { name: "ipad", price: 3600 }
+        // ];
+        // function Price(goods, price) {
+        //     return goods.filter(function (good) {
+        //         if (good.price >= price) {
+        //             return good.name
+        //         }
+        //     }).map(function (good) {
+        //         return good.name
+        //     })
+        // }
+        // console.log(Price(cart, 10000));//['iphone', 'imac']
+        // function Price(goods, price) {
+        //     return goods.reduce(function (arr, cur) {
+        //         if (cur.price > price) {
+        //             arr.push(cur.name);
+        //         }
+        //         return arr; // 显式返回累加器
+        //     }, []); // 初始值为空数组
+        // }
+
+        // console.log(Price(cart, 10000)); //["iphone", "imac"]
+
+        // function maxPrice(goods) {
+        //     return cart.reduce(function (pre, cur) {
+        //         return pre.price > cur.price ? pre : cur;
+        //     });
+        // }
+        // console.log(maxPrice(cart));
+        // function sum(goods) {
+        //     return goods.reduce(function (total, cur) {
+        //         return (total += cur["price"]);
+        //     }, 0);
+        // }
+        // console.log(sum(cart));
+
+        // let arr = [1, 2, 3, 3, 1, 4, 1, 2]
+        // let newArr = arr.reduce(function (arr, cur) {
+        //     if (arr.includes(cur) === false) {//如果arr里不包含当前元素
+        //         arr.push(cur)//就push进arr
+        //     }
+        //     return arr
+        // }, [])
+        // console.log(newArr)//[1,2,3,4]
+
+        // let cart = [
+        //     { name: "imac", price: 25000 },
+        //     { name: "iphone", price: 12000 },
+        //     { name: "imac", price: 25000 },
+        //     { name: "ipad", price: 3600 },
+        //     { name: "ipad", price: 3600 }
+        // ];
+        // function filterGoods(goods) {
+        //     return goods.reduce(function (arr, cur) {
+        //         let find = arr.find(function (good) {
+        //             return good.name == cur.name
+        //         })
+        //         if (!find) arr.push(cur)
+        //         return arr
+        //     }, [])
+        // }
+        // console.log(filterGoods(cart));
+        // const div = document.querySelector("div");
+        // [...div.textContent].reduce(function (pre, cur, index) {
+        //     pre == index && (div.innerHTML = "");
+        //     let span = document.createElement("span");
+        //     span.innerHTML = cur;
+        //     div.appendChild(span);
+        //     span.addEventListener("mouseover", function () {
+        //         this.classList.add("color");
+        //     });
+        //     span.addEventListener("animationend", function () {
+        //         this.classList.remove("color");
+        //     });
+        // }, 0);
+    </script>
+</body>
+
+</html>

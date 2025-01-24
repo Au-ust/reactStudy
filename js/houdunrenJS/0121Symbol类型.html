@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let n = Symbol()
+        // let m = Symbol()
+        // console.log(n === m)//false
+        // let a = 1
+        // let b = 1
+        // console.log(a === b)//true
+        //let num = Symbol()
+        // console.log(typeof num)//symbol
+        // let num = Symbol()
+        // let cms = Symbol.for('xxx')
+        // console.log(Symbol.keyFor(cms))//xxx
+        // console.log(Symbol.keyFor(num))//undefined
+
+        // let bms = Symbol.for('xxx')
+        // console.log(bms === cms)//true
+
+        // console.log(cms)
+        // console.log(cms.description)//xxx
+        // let user1 = {
+        //     name: "李四",
+        //     key: Symbol()
+        // };
+        // let user2 = {
+        //     name: "李四",
+        //     key: Symbol()
+        // };
+        // let grade = {
+        //     [user1.key]: { js: 100, css: 89 },
+        //     [user2.key]: { js: 35, css: 55 }
+        // };
+        // console.log(grade[user2.key], grade[user1.key]);
+
+        // class Cache {
+        //     static data = {};
+        //     static set(name, value) {
+        //         return (this.data[name] = value);
+        //     }
+        //     static get(name) {
+        //         return this.data[name];
+        //     }
+        // }
+        // // Cache.set("hdcms", "houdunren.com");
+        // // console.log(Cache.get("hdcms"));
+        // let user = {
+        //     name: "apple",
+        //     desc: "用户资料"
+        // };
+        // let cart = {
+        //     name: "apple",
+        //     desc: "购物车"
+        // };
+        // Cache.set('user-apple', user);
+        // Cache.set('cart-apple', cart);
+        // console.log(Cache.get('cart-apple'));
+
+
+        // let symbol = Symbol("这是一个symbol类型")
+        // let hd = {
+        //     name: "后盾人",
+        //     [symbol]: "houdunren.com0"
+        // }
+        // for (const key in hd) {
+        //     console.log(key)    //遍历不到,只能遍历到普通属性,name
+        // }
+        // for (const key of Object.getOwnPropertySymbols(hd)) {
+        //     console.log(key)        //只能遍历到symbol属性,Symbol(这是一个symbol类型)
+        // }
+        // for (const key of Reflect.ownKeys(hd)) {
+        //     console.log(key)        //可以遍历所有属性name,Symbol(这是一个symbol类型)
+        // }
+
+        let site = Symbol("这是一个symbol")
+        class User {
+            constructor(name) {
+                this.name = name
+                this[site] = "后盾人"
+            }
+            getName() {
+                return `${this[site]} ${this.name}`
+            }
+        }
+        let zs = new User('张三')
+        for (const key in zs) {
+            console.log(key)
+        }
+
+    </script>
+</body>
+
+</html>

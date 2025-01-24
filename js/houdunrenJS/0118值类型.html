@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.30.1/locale/ar-kw.min.js"></script>
+    <input type="text" name="password">
+    <script>
+         const date = moment("2022-02-22 22:22:22");
+            console.log(date.format("YYYY-MM-DD HH:mm:ss")); // 输出原始日期
+            console.log(date.add(10, "days").format("YYYY-MM-DD HH:mm:ss")); // 输出加10天后的日期
+
+        let password = document.querySelector("[name='password']")
+        password.addEventListener("keyup", function () {
+            this.value = this.value.trim()
+            console.log(this.value.length)
+
+        })
+
+        let hd = "想品客老师的第一天"
+        console.log(hd.slice(3, 6))//老师的
+        console.log(hd.substr(2, 3))//客老师
+        console.log(hd.substring(1, 4))//品客老
+        console.log(hd.indexOf('第'))//6
+        console.log(hd.includes('第'))//true
+        console.log(hd.lastIndexOf('第', 6))//6
+        console.log(hd.lastIndexOf('第', 5))//-1
+        console.log(hd.indexOf('一', 7))//7
+        console.log(hd.indexOf('一', 8))//-1
+        console.log(hd.indexOf('二'))//-1
+        console.log(hd.startsWith('想'))//true
+        console.log(hd.endsWith('天'))//true
+
+
+        const hds = 'Hello world'
+        console.log(hds.toLowerCase().startsWith('h'))//true
+
+        const word = ["@@", "css"];
+        const string = "我喜欢在后盾人学习php与css知识";
+        const status = word.some(word => {
+            return string.includes(word);
+        });
+        if (status) {//在string字符串里找word
+            console.log("找到了关键词")//找到了css，所以为true
+        }
+
+        const words = ["php", "css"]
+        const strings = "我喜欢在后盾人学习php与css知识"
+
+        const replaceString = words.reduce(
+            (pre, word) => pre.replace(new RegExp(word, "g"), `<a href="?w=${word}">${word}</a>`),
+            strings
+        )
+
+        console.log(replaceString)
+        document.body.innerHTML += replaceString
+
+        function phone(num, len) {
+            return String(num).slice(0, len * -1) + '*'.repeat(len)
+        }
+        console.log(phone(17390201209, 4))
+        console.log(1 == true)//true
+        console.log(1 === true)//false
+
+        let n = 0
+        console.log(typeof n)//number
+        console.log(n == true)//false,n为false
+        console.log(typeof !n)//boolean
+        console.log(!n == true)//true,n本来为false，感叹号进行了类型转换+取反
+        console.log(typeof !!n)//boolean
+        console.log(!!n == true)//false,类型转换+二次取反
+
+        let arr = [1, 2, 3]
+        console.log(Number(arr))//NaN
+        const students = ["李四", "赵云", "张三", "王五", "马六"]
+        function arrayRandomValue(arr, start, end) {
+            end = end ? end : arr.length
+            let index = Math.floor(start + Math.random() * (end - start))
+            console.log(index)
+            return arr[index]
+        }
+        console.log(arrayRandomValue(students, 0,))
+
+        // console.log(hd[0]);
+        // for (let i = 0; i < hd.length; i++) {
+        //     let span = document.createElement("span")
+        //     span.style.fontSize = (i + 1) * 10 + "px"
+        //     span.innerHTML = hd.charAt(i)
+        //     document.body.append(span)
+        // }
+
+        // houdunren: for (let i = 1; i <= 10; i++) {
+        //     hdcms: for (let n = 1; n <= 10; n++) {
+        //         if (n % 2 == 0) {
+        //             console.log(i, n)
+        //         }
+        //         if (n + i > 10) {
+        //             break houdunren
+        //         }
+        //     }
+        // }
+        // let hd = [];
+        // let hdcms = {};
+        // // console.log(typeof hdcms);
+        // // hd.prototype
+        // console.log(hd instanceof Array);//true
+        // console.log(hdcms instanceof Array);//false
+        // function User() { }
+        // let xj = new User();
+        // console.log(xj instanceof Array);//false
+        // const str="今天是学习\"后盾人\"的第一天"//转义字符
+        // console.log(str)//今天是学习"后盾人"的第一天
+        // const str1 = "今天是学习\\后盾人\\的第一天"//转义字符
+        // console.log(str1)//今天是学习"后盾人"的第一天
+        //   let lessons = [
+        //         { title: "媒体查询响应式布局" },
+        //         { title: "FLEX弹性盒模型" },
+        //         { title: "GRID栅格系统" }
+        //     ]
+        //     function template() {
+        //         return `
+        //     <ul>${lessons.map(item => `<li>${item.title}</li>`).join('')}</ul>
+        //     `
+        //     }
+        //     document.body.innerHTML = template()
+
+        // let lessons = [
+        //     { title: "后盾人媒体查询响应式布局", author: "后盾人向军" },
+        //     { title: "FLEX 弹性盒模型", author: "后盾人" },
+        //     { title: "GRID 栅格系统后盾人教程", author: "古老师" }
+        // ];
+        // function template() {
+        //     return `<ul>
+        //         ${lessons.map(item => links`<li>作者:${item.author}，课程:${item.title}</li>`).join("")}
+        //     </ul>`
+        // }
+        // function links(strings, ...vars) {
+        //     return strings.map((str, key) => { return (str + (vars[key] ? vars[key].replace("后盾人", `<a href="https://www.houdunren.com">后盾人</a>`) : "")) }).join("");
+        // }
+        // document.body.innerHTML += template();
+
+        // let str = ' 今天是学习   后盾人   的第一天 '//前后各有一个空格
+        // console.log(str.length)//20
+        // console.log(str.trim().length)//18
+
+    </script>
+</body>
+
+</html>
