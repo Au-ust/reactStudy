@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            position: absolute;
+        }
+    </style>
+</head>
+<button>点我 </button>
+<button>溜了溜了。。。</button>
+
+<body>
+    <script>
+          let hd = {
+                user: "后盾人",
+                get: function () {
+                    let This=this
+                    return function(){
+                        return This.user;
+                    }
+                }
+            };
+            let a = hd.get();
+            console.log(a())//后盾人
+            // let divs = document.querySelectorAll("div");
+            //     divs.forEach(function (item) {
+            //         let desc = item.getAttribute("desc");
+            //         item.addEventListener("click", function () {
+            //             // console.log(item.getAttribute("desc"));
+            //             console.log(desc);
+            //             console.log(item);
+            //         });
+            //         item = null;
+            //     });
+    // let lessons = [
+    //   {
+    //     title: "媒体查询响应式布局",
+    //     click: 89,
+    //     price: 12
+    //   },
+    //   {
+    //     title: "FLEX 弹性盒模型",
+    //     click: 45,
+    //     price: 120
+    //   },
+    //   {
+    //     title: "GRID 栅格系统",
+    //     click: 19,
+    //     price: 67
+    //   },
+    //   {
+    //     title: "盒子模型详解",
+    //     click: 29,
+    //     price: 300
+    //   }
+    // ];
+    // function order(field, type = "asc") {
+    //   return function(a, b) {
+    //     if (type == "asc") return a[field] > b[field] ? 1 : -1;
+    //     return a[field] > b[field] ? -1 : 1;
+    //   };
+    // }
+    // let hd = lessons.sort(order("price"));
+    // console.table(hd);
+    // let hd = lessons.sort(function(a, b) {
+    //   return a.price > b.price ? 1 : -1;
+    // });
+    // console.table(hd);
+    // let a = lessons.sort(function(a, b) {
+    //   return a.click > b.click ? 1 : -1;
+    // });
+    // console.table(a);
+ 
+
+        // let btns = document.querySelectorAll('button')
+        // btns.forEach(function (item) {
+        //     let flag = false
+        //     item.addEventListener('click', function () {
+        //         if (!flag) {
+        //             let left = 1
+        //             flag = true//写在里面
+        //             setInterval(function () {
+        //                 item.style.left = left++ + 'px'
+        //             }, 10)
+        //         }
+
+        //     })
+        // })
+
+        //    let lessons = [
+        //         {
+        //             title: "媒体查询响应式布局",
+        //             click: 89,
+        //             price: 12
+        //         },
+        //         {
+        //             title: "FLEX 弹性盒模型",
+        //             click: 45,
+        //             price: 120
+        //         },
+        //         {
+        //             title: "GRID 栅格系统",
+        //             click: 19,
+        //             price: 67
+        //         },
+        //         {
+        //             title: "盒子模型详解",
+        //             click: 29,
+        //             price: 300
+        //         }
+        //     ];
+
+        //     function between(a, b) {
+        //         return function (v) {
+        //             return v.price >= a && v.price <= b;
+        //         };
+        //     }
+        //     console.table(lessons.filter(between(10, 100)));
+        // let arr = [1, 23, 4, 5, 6, 7, 8, 9, 21, 10];
+        // function between(a, b) {
+        //     return function (v) {
+        //         return v >= a && v <= b;
+        //     };
+        // }
+        // console.log(arr.filter(between(3, 9)))// [4, 5, 6, 7, 8, 9]
+
+        // let hd = arr.filter(function (v) {
+        //     return v >= 2 && v <= 9;
+        // });
+        // console.log(hd);// [4, 5, 6, 7, 8, 9]
+        // let a = arr.filter(function (v) {
+        //     return v >= 6 && v <= 10;
+        // });
+        //   console.log(a)//[6, 7, 8, 9, 10]
+        // let hd = arr.filter(function(v) {
+        //   return v >= 2 && v <= 9;
+        // });
+        // console.log(hd);
+        // let a = arr.filter(function(v) {
+        //   return v >= 6 && v <= 10;
+        // });
+        // console.log(a);
+        // let arr = [];
+        // for (var i = 1; i <= 3; i++) {
+        //     (function (i) {
+        //         arr.push(function () {
+        //             return i;
+        //         });
+        //     })(i)//把i传过去
+        //     // console.log(i);
+        // }
+        // console.log(arr[2]());
+        //   for (var i = 1; i <= 3; i++) {
+        //         (function (i) {
+        //             setTimeout(function () {
+        //                 console.log(i);//1,2,3
+        //             }, 1000);
+        //         })(i);
+        //     }
+        // for (var i = 1; i <= 3; i++) {
+        //     setTimeout(function () {
+        //         console.log(i);
+        //     }, 1000);
+        // }
+        //console.log(i);
+        // {
+        //     let a = 1
+        // }
+        // {
+        //     let a = 1
+        // }
+        // function Hd() {
+        //     let n = 1;
+        //     this.sum = function () {
+        //         console.log(++n);
+        //     };
+        // }
+        // let a = new Hd();
+        // a.sum();
+        // a.sum();
+        // let b = new Hd();
+        // b.sum();
+        // b.sum();
+
+        // function hd() {
+        //     let n = 1;
+        //     return function sum() {
+        //         // console.log(++n);
+        //         let m = 1;
+        //         function show() {
+        //             console.log("m:" + ++m);
+        //             console.log("n:" + ++n);
+        //         };
+        //         show()
+        //     };
+        // }
+        // let a = hd();
+        // a();
+        // a();
+        // a();
+        // let title = '荷叶饭'
+        // function fn() {
+        //     alert(title)
+        // }
+        // document.querySelector('button').addEventListener('click', fn)
+        // let title = '荷叶饭'
+        // function show() {
+        //     let url = '#孩子们我是个链接'
+        //     function hd() {
+        //         console.log(url)//里面可以访问外面
+        //     }
+        //     hd()
+        // }
+        // show()
+
+    </script>
+</body>
+
+</html>

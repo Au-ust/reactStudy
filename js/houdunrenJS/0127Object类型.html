@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+let hd = {
+      title: "后盾人",
+      url: "houdunren.com",
+      teacher: {
+        name: "向军大叔"
+      }
+    };
+    let json = JSON.stringify(hd, null, 2);
+    console.log(json);
+
+    let obj = JSON.parse(json, (key, value) => {
+      if (key == "title") {
+        value = "[后盾]-" + value;
+      }
+      return value;
+    });
+    console.log(obj.title);
+
+        // let data={
+        //     name:'荷叶饭',
+        //     data:{
+        //         title:'js'
+        //     }
+        // }
+        // let json=JSON.stringify(data,['name'],5)
+        // console.log(json)//{"name":"荷叶饭"}
+        
+    // const lessons = [
+    //     {
+    //         title: "媒体查询响应式布局",
+    //         category: "css"
+    //     },
+    //     {
+    //         title: "FLEX模型",
+    //         category: "css"
+    //     },
+    //     {
+    //         title: "MYSQL多表查询随意操作",
+    //         category: "mysql"
+    //     }
+    // ];
+    // let proxy = new Proxy(lessons, {
+    //     get(array, key) {//对数组的访问做出拦截
+    //         const title = array[key].title;
+    //         const len = 10;
+    //         array[key].title =
+    //             title.length > len ? title.substr(0, len) + ".".repeat(3) : title;
+    //         //如果长度大于 10，则将 title 截取为前 10 个字符，并加上 "..." 
+    //         //如果长度不大于 10，则保持原样。
+    //         return array[key];
+    //     }
+    // });
+    // console.log(JSON.stringify(proxy[2], null, 2))//代理会触发get操作，get方法会修改该元素的 title 属性，使其符合长度要求。
+
+    //      "use strict"
+    // function factorial(num) {
+    //     return num == 1 ? 1 : num * factorial(num - 1);
+    // }
+    // let proxy = new Proxy(factorial, {
+    //     apply(func, obj, args) {
+    //         console.time("run");
+    //         func.apply(this, args);
+    //         console.timeEnd("run");
+    //     }
+    // });
+    // proxy.apply({}, [5])
+
+// const hyf={name:'荷叶饭'}
+// const proxy=new Proxy(hyf,{
+//     get(obj,property){
+//         //console.log(obj)//访问被代理的对象
+//         //console.log(property)//属性
+//         return obj[property]
+//     },
+//     set(obj,property,value){
+//         obj[property]=value
+//         return true
+//     }
+
+// })//定义proxy对象代理hyf对象
+// console.log(proxy.name)//通过代理访问name,荷叶饭
+// proxy.name='励志轩'
+// console.log(proxy.name)//励志轩
+
+        // function User(name,age){
+        //     let data={name,age}
+        //     Object.defineProperties(this,{
+        //         name:{
+        //             get(){
+        //                 return data.name
+        //             },
+        //             set(value){
+        //                 if(value.trim()==''||value.length>20){
+        //                     throw new Error('用户名不合法')
+        //                 }
+        //                 data.name=value
+        //             }
+        //         },
+        //         age:{
+        //             get() {
+        //                 return data.age
+        //             },
+        //             set(value) {
+        //                 data.age = value
+        //             }
+        //         }
+        //     })
+        // }
+        // let hyf=new User('荷叶饭',19)
+        // //console.log(hyf.data)undefined,因为data是构造函数的局部变量
+        // console.log(hyf.name)//但是这样可以访问的到
+        
+        // "use strict";
+        //     const DATA = Symbol();
+        //     const user = {
+        //         // name: "后盾人",
+        //         [DATA]: { name },
+        //         age: 10,
+        //         set name(value) {
+        //             this[DATA].name = value;
+        //         },
+        //         get name() {
+        //             return this[DATA].name;
+        //         }
+        //     };
+        //     //user.name = "hdcms";
+        //     user[DATA].name='荷叶饭'
+        //     console.log(user[DATA])
+        // 'use strict'
+        // const user={
+        //     name:'荷叶饭',
+        //     age:19,
+        //     set name(value){
+        //         console.log('如果访问器的权限高就执行这条')
+                
+        //     }
+        // }
+        // user.name='励志轩'
+        // console.log(user)
+        
+    //             "use strict";
+    //             //token
+    //             let Request = {
+    //                 set token(content) {
+    //                 localStorage.setItem("token", content);
+    //   },
+    //             get token() {
+    //                 let token = localStorage.getItem("token");
+    //             if (!token) {
+    //                 alert("请登录");
+    //     }
+    //             return token;
+    //   }
+    // };
+    //             Request.token = "3248989239823kldskjklsd";
+    //             console.log(Request.token);
+// const user={
+//     data:{name:'荷叶饭',age:18},
+//     set age(value){
+//         console.log('进入set Age')
+//         if(typeof value!='number'||value<0||value>150){
+// throw new Error('年龄格式错误')
+//         }
+        
+//     },getAge() { }
+// }
+// user.age=999
+
+
+// Object.defineProperties(user,{
+//         name: {
+//             value: '荷叶饭',
+//             writable: true,
+//             enumerable: true,
+//             configurable: true
+//         },
+//         age: {
+//             value: '18',
+//             writable: true,
+//             enumerable: true,
+//             configurable: true
+//         }
+// })
+// Object.freeze(user)
+// console.log(Object.isFrozen(user))//true，处于冻结状态
+// console.log(Object.getOwnPropertyDescriptors(user))
+
+
+//Object.preventExtensions(user)
+    // if (Object.isExtensible(user)) {
+    //     user.site = "houdunren.com";
+    //     console.log(user);
+    // }
+
+
+// user.name='励志轩'
+// console.log(Object.getOwnPropertyDescriptors(user))//name还是荷叶饭
+
+
+    // let User = new Function(
+    //     "name",
+    //     `
+    //   this.name = name;
+    //   this.show = function(){
+    //     console.log(this.name+'是能过构造函数Function创建的');
+    //   }
+    // `
+    // );
+    // let xj = new User("函数");
+    // xj.show();
+
+    // let s = new String("houdunren");
+    // let n = new Number(1);
+    // let o = new Object();
+    // let b = new Boolean(true);
+// function User(name){
+//     this.name=name
+// this.show=function(){
+//     console.log(this.name)
+// }
+// //return this,这里return this可以省略，但是这里的return会决定使用构造函数创建的对象
+// }
+// let hyf=new User('荷叶饭')
+// console.log(hyf)
+
+// function user(name){
+//     return {
+//         name,
+//         show:function(){
+//             console.log(this.name+`-孩子们今天是除夕`)
+            
+//         }
+//     }
+// }
+// let hyf=user('荷叶饭')
+// hyf.show()
+// let lzx=user('励志轩')
+// lzx.show()
+
+    // let lessons = [
+    //      { name: "js", click: 999 },
+    //     { name: "node", click: 127 }
+    // ];
+    // let ul = document.createElement("ul");
+    // for (const lesson of lessons) {
+    //     let li = document.createElement("li");
+    //     li.innerHTML = `课程:${lesson.name}，点击数:${lesson.click}`;
+    //     ul.appendChild(li);
+    // }
+    // document.body.appendChild(ul);
+
+    // let hd = {
+    //     name: "后盾人",
+    //     year: "2010"
+    // };
+    //  for (const iterator of Object.entries(hd)) {
+    //             console.log(iterator);
+    //         }
+    // for (const [key, value] of Object.entries(hd)) {
+    //   console.log(value);
+    // }
+    // for (const key in hd) {
+    //   console.log(hd[key]);
+    // }
+    // for (const iterator of Object.values(hd)) {
+    //         console.log(iterator);
+    //     }
+
+    // const lessons = [
+    //     {
+    //         title: "媒体查询响应式布局",
+    //         category: "css"
+    //     },
+    //     {
+    //         title: "FLEX 弹性盒模型",
+    //         category: "css"
+    //     },
+    //     {
+    //         title: "MYSQL多表查询随意操作",
+    //         category: "mysql"
+    //     }
+    // ];
+    // let res = lessons.reduce((obj, cur, index) => {
+    //     obj[`${cur["category"]}-${index + 1}`] = cur;
+    //     return obj;
+    // }, {});
+    // // console.log(res);
+    // console.log(JSON.stringify(res, null, 2));
+
+    // // let hd = Object.assign({ a: 1 }, { b: 2 });
+    // // console.log(hd);
+    // // jQuery.extend()  lodash
+    // function upload(params) {
+    //     let options = {
+    //         size: 19999
+    //     };
+    //     options = Object.assign(options, params);//合并两个对象
+    //     console.log(JSON.stringify(options, null, 2));
+    // }
+    // upload({ size: 99, type: "jpeg" });
+
+    // let hd = {};
+    // let name = "title";
+    // hd[name] = "后盾人";
+    // console.log(hd.title);//后盾人
+
+    // let a = {
+    //     name: "后盾人"
+    // };
+    // let b = {
+    //     url: "houdunren.com"
+    // };
+    // Object.setPrototypeOf(a, b);//设置b为a的原型对象
+    // console.log(a);
+    // console.log(a.hasOwnProperty("url"));//a里面是否包含url，a不包含，a的父级包含，所以为false
+    // console.log("url" in a);//a的父亲包含，true
+
+        //  let hd = { name: "后盾人" };
+        //     let arr = ["houdunren.com", "hdcms"];
+        //     console.log(arr)
+        //     console.log(arr.hasOwnProperty("length"));//true，arr实例对象里有length属性
+        //     console.log(arr.hasOwnProperty("concat"));//false，arr实例对象没有concat属性
+        //     console.log("concat" in arr);//true，在父级找到
+        //     console.log("length" in arr);//true,在本级找到
+// let hd={}
+// hd.name='后盾人'
+// hd['age']=18
+// console.log(hd.age)//18
+// hd.age=199
+// console.log(hd.age)//199
+// delete(hd.age)//删除
+// console.log(hd.age)//undefined
+
+    // function createElement(options = {}) {
+    //     let { width = 200, height = 100, backgroundColor = "red" } = options;
+    //     // console.log(width, height, backgroundColor);
+    //     const div = document.createElement("div");
+    //     div.style.width = width + "px";
+    //     div.style.height = height + "px";
+    //     div.style.backgroundColor = backgroundColor;
+    //     document.body.appendChild(div);
+    // }
+    // createElement({ width: 60});
+
+// function createElement(opt={}){//opt默认值为{}
+//     let {width=200,height=100,backgroundColor='red'}=opt
+//     console.log(width,height,backgroundColor)
+// }
+// createElement()//200 100 'red'
+    // let user = { name: "后盾人", url: "houdunren.com"};
+    // let { url, name, title = "hdcms" } = user;
+    // console.log(name, url, title)//后盾人 houdunren.com hdcms
+
+    // let arr = ["后盾人", "houdunren.com"];
+    // let [a, b, c = "hdcms"] = arr;//当第三个参数可能没有的时候，给他个默认值
+    // console.log(a, b, c);//后盾人 houdunren.com hdcms
+
+//   let hd = {
+//       name: "后盾人",
+//       lesson: {
+//         title: "javascript"
+//       }
+//     };
+//     let {
+//       name,
+//       lesson: { title }
+//     } = hd;
+//     console.log(name, title);
+
+        //  let name = "后盾人",
+        //         url = "houdunren.com";
+        //     // console.log({ name:name, url:url })简写的本质
+        //     let opt = { name, url }
+        //     console.log(opt)//{name: '后盾人', url: 'houdunren.com'}
+        // let arr = ["后盾人", "houdunren.com"]
+        //     let [, b] = arr//不需要前面的参数可以不写
+        //     console.log(b)//houdunren.com
+        //  let web = { name: "后盾人", url: "houdunren.com" };
+        //     let { name, url } = web;
+        //     console.log(name, url);
+        // "use strict";
+        //     const { name, age } = { name: "向军", age: 23 };
+        //     console.log(name, age);
+// function user({name,age}) {
+//     console.log(name,age)
+// }
+// user({ name: "荷叶饭", age: 19 })//荷叶饭，19
+
+// function hd(){
+//     return { name: "荷叶饭", age: 19 }
+// }
+// let {name,age}=hd()
+// console.log(name,age)//荷叶饭，19
+
+        // let user = { name: "荷叶饭", age: 19 }
+        //     // console.log(user);   
+        //     //const { name:name, age:age } = user//如果新属性名和旧属性名一样
+        //     const { name, age } = user//可以简写成这样
+        //     console.log(age)//19
+
+        // function upload(p){
+        //     let config={
+        //         type:'*.jpeg,*.png',
+        //         size:10000//默认属性
+        //     }
+        //     config={...config,...p}//同属性名，后面的会覆盖前面的
+        //     console.log(config)//{type: '*.gif', size: 99}
+        // }
+        // upload({type:'*.gif',size:99})//用户传入自己的属性
+
+
+        // let user = {
+        //     name: '荷叶饭',
+        //     'my age': 19
+        // }
+        // let hd={...user,gender:'女'}
+        // console.log(hd)//{name: '荷叶饭', my age: 19, gender: '女'}
+
+        // let user={
+        //     name:'荷叶饭',
+        //     'my age':19
+        // }
+        // console.log(user['my age'])//19
+        
+        // let user = {
+        //     name: '荷叶饭',
+        //     grade: [
+        //         { name: 'js', score: 99 },
+        //         { name: 'docker', score: 96 }
+        //     ],
+        //     average() {//省去参数的传递
+        //         let total = this.grade.reduce((last, next) => last + next.score, 0)//直接使用this指针
+        //         return `${this.name}的平均成绩是：${total / this.grade.length}`
+        //     }
+        // }
+        // console.log(user.average())//荷叶饭的平均成绩是：97.5
+        // let name = '荷叶饭'
+        // let grade = [
+        //     { name: 'js', score: 99 },
+        //     { name: 'docker', score: 96 }
+        // ]
+        // function average(grade, name) {
+        //     let total = grade.reduce((last, next) => last + next.score, 0)
+        //     return `${name}的平均成绩是：${total / grade.length}`
+        // }
+        // console.log(average(grade,name))//荷叶饭的平均成绩是：97.5
+
+    </script>
+</body>
+
+</html>
