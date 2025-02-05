@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>模块</title>
+</head>
+<!-- <body>
+    <button>houdunren</button>
+</body>
+<script type="module">
+    //import
+    document.querySelector("button").addEventListener("click", () => {
+        import("./0204model2.js").then(({ site, url }) => {
+            console.log(site, url);
+        });
+    });
+</script> -->
+
+<body>
+    <script type="module">
+     import *as api from './temp.js'
+     console.log(api)
+     
+
+        //export{site,url User,web}
+    // import User from './0204model.js'//默认导出的内容赋值给User
+    // console.log(User)//所以User是一个类
+    //   import sjb from './0204model.js'//换个名字也可以
+    //     console.log(sjb)//User是一个类
+    
+    // console.log(othername)//后盾人ipt 
+        // import { hd as othername } from './0204model.js'
+        // console.log(othername)//后盾人
+        
+        // import *as api from './0204model.js'
+        // console.log(api.site)
+        // console.log(api.show())
+        // console.log(api.User.render())
+
+        //console.log(api)
+
+        // import { site, show, User } from './0204model.js'
+        // console.log(site)
+        // console.log(show())
+        // console.log(User.render())
+
+        // import { obj } from './0204model.js'
+        // console.log(obj.get())
+
+        //import { obj } from './0204model.js'
+        //import { obj } from './0204model.js'
+    </script>
+    <!-- <script type="module">
+        let site = '荷叶饭'
+    </script>
+    <script type="module">
+        console.log(site)
+    </script> -->
+    <!-- <div id="content">Hello, World!</div>
+    <script type="module">
+        console.log("模块脚本执行");
+        document.getElementById("content").textContent = "模块已修改内容";
+    </script> -->
+</body>
+
+</html>

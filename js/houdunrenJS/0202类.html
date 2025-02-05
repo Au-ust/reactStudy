@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        class User {
+            #host = '###'//私有，只能用访问器改
+            constructor(name) {
+                this.name = name
+            }
+            set host(url) {
+                if (!/^http?:/i.test(url)) {
+                    throw new Error('非常网址')
+                }
+                this.host = url
+            }
+            check() {
+                if (this.name.length < 5) {
+                    throw new Error('名字长度不小于5位')
+                }
+                return true
+            }
+        }
+        let hd = new User('后盾人')
+        hd.host = 'http://'
+        hd.check()
+        console.log(hd)
+        // const host = new WeakMap()
+        // class User {
+        //     constructor(name) {
+        //         this.name = name
+        //         host.set()
+        //     }
+        //     set url(url) {
+        //         if (!/^https?:/i.test(url)) {
+        //             throw new Error('非常网址')
+        //         }
+        //     }
+        //     get host() {
+        //         return host.get(this)
+        //     }
+        // }
+        // let hd = new User('后盾人')
+        // host.set(hd, 'abc')
+        // console.log(hd.host)
+
+
+        // class Request {
+        //     constructor(host) {
+        //         this.data = {}
+        //         this.host = host
+        //     }
+        //     set host(url) {
+        //         if (!/^https:?\/\//i.test(url)) {
+        //             throw new Error('地址错误')
+        //         }
+        //         this.data.host = url
+        //     }
+        //     get host() {
+        //         return this.data['host']
+        //     }
+        // }
+        // let hd = new Request('https://houdunren.com')
+
+        // class Request {
+        //     static host = "https://www.houdunren.com";
+        //     api(url) {
+        //         return Request.host + `/${url}`;
+        //     }
+        // }
+        // let obj = new Request();
+        // console.log(obj.api("article"))//https://www.houdunren.com/article
+
+        // function Web(url) {
+        //     this.url = url;
+        // }
+        // Web.url = "hdcms.com";
+        // let hd = new Web("houdunren.com");
+        // console.log(hd);
+        // console.dir(Web);
+
+        // "use strict";
+        // function User() { }
+        // User.prototype.show = function () {
+        //     function test() {
+        //         console.log(this);
+        //     }
+        //     test();
+        // };
+        // let u = new User();
+        // u.show()//undefined，因为this指向不明确
+
+        // class Hd {
+        //     constructor(name) {
+        //         this.name = name
+        //     }
+        //     show() {
+        //         console.log('我在原型里')
+
+        //     }
+        // }
+        // let h = new Hd()
+        // for (const key in h) {
+        //     console.log(key)//只打印name，不打印show方法
+        // }
+
+        // class User {
+        //     site = "后盾人";
+        //     constructor(name) {
+        //         this.name = name;
+        //     }
+        //     changeSite(value) {
+        //         this.site = value;
+        //     }
+        //     show() {
+        //         return `${this.site}:${this.name}`;
+        //     }
+        // }
+        // let hd = new User("后盾人");
+        // hd.changeSite("houdunren")//通过内部的方法声明hd对象内部的属性
+        // console.log(hd.show());
+
+        // class User {
+        //     constructor(name) {
+        //         this.name = name//和下面是一个作用
+        //     }
+        // }
+        // // console.log(User === User.prototype.constructor)//true
+        // console.dir(User);
+        // function Hd(name) {
+        //     this.name = name//和上面是一个作用
+        // }
+        // console.dir(Hd)
+
+
+        // //1、
+        // class User{}
+        // console.log(typeof User)//function
+        // //2、
+        // let Hd=class{}
+        // //3、
+        // class Stu{
+        //     show(){}
+        //     get(){
+        //         console.log('后盾人')
+        //     }
+        // }
+        // let hd=new Stu()
+        // hd.get()//后盾人
+    </script>
+</body>
+
+</html>
