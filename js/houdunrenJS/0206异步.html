@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: yellowgreen;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        Promise.hd = function (value) {
+            return new Promise(resolve => {
+                resolve(value);
+            });
+        };
+        Promise.hd("后盾人").then(value => {
+            console.log(value);
+        });
+        function query(name) {
+            const cache = query.cache || (query.cache = new Map());
+            if (cache.has(name)) {
+                console.log("走缓存了");
+                return Promise.resolve(cache.get(name));
+            }
+            return ajax(`http://localhost:8888/php/user.php?name=${name}`).then(
+                user => {
+                    cache.set(name, user);
+                    console.log("没走缓存");
+                    return user;
+                }
+            );
+        }
+        
+//         Promise.resolve('我是成功状态').then(
+//             value=>{
+// console.log('进入成功状态') 
+//             },lose=>{
+//                 console.log('进入失败状态')
+//             })
+
+        // function loadScript(src){
+        //     return new Promise((reslove,reject)=>{
+        //         const script=document.createElement('script')
+        //         script.src=src
+        //         script.onload=()=>reslove(script)
+        //         script.onerror=reject
+        //         document.body.appendChild(script)
+        //     })
+        // }
+        // loadScript('./temp.js').then(script=>{
+        //    return loadScript('./temp2.js')
+        // }).then(script=>{
+        //     houdunren()
+        // })
+
+    // function interval(delay = 1000, callback) {
+    //     return new Promise(resolve => {
+    //         let id = setInterval(() => {
+    //             callback(id, resolve);
+    //         }, delay);
+    //     });
+    // }
+    // interval(100, (id, resolve) => {
+    //     const div = document.querySelector("div");
+    //     let left = parseInt(window.getComputedStyle(div).left);
+    //     div.style.left = left + 10 + "px";
+    //     if (left >= 200) {
+    //         clearInterval(id);
+    //         resolve(div);
+    //     }
+    // })//负责移动的模块
+    //     .then(div => {
+    //         return interval(100, (id, resolve) => {
+    //             let width = parseInt(window.getComputedStyle(div).width);
+    //             div.style.width = width - 10 + "px";
+    //             if (width <= 20) {
+    //                 clearInterval(id);
+    //                 resolve(div);
+    //             }
+    //         });
+    //     })//负责改变宽度的模块
+    //     .then(div => {
+    //         div.style.backgroundColor = "red";
+    //     });//负责改变颜色的模块
+
+    // function timeout(delay = 1000) {
+    //     return new Promise(resolve => setTimeout(resolve, delay));
+    // }
+    // timeout(2000)
+    //     .then(() => {
+    //         console.log("houdunren.com");//等两秒打印
+    //         return timeout(2000);
+    //     })
+    //     .then(value => {
+    //         console.log("hdcms.com");//在等两秒打印
+    //     });
+
+    // function loadImage(src) {
+    //     return new Promise((resolve, reject) => {
+    //         const image = new Image();
+    //         image.src = src;
+    //         image.onload = () => {
+    //             resolve(image);
+    //         };
+    //         image.onerror = reject;
+    //         document.body.appendChild(image);
+    //     });
+    // }
+    // loadImage("./shushu.jpg").then(image => {
+    //     image.style.border = "solid 6px red";
+    // });
+
+    // const promise = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         resolve("成功！");//五秒后打印
+    //         // 或者 reject("失败！");
+    //     }, 5000);
+    // })
+    //     .then(result => {
+    //         console.log("成功:", result);//和上面那个同步
+    //     })
+    //     .catch(error => {
+    //         console.error("失败:", error);
+    //     })
+    //     .finally(() => {
+    //         return new Promise(resolve => {
+    //             setTimeout(() => {
+    //                 console.log("finally 中的异步操作完成");//五秒的基础上，再过一秒打印
+    //                 resolve();
+    //             }, 1000);
+    //         });
+    //     })
+    //     .then(() => {
+    //         console.log("finally 后的 then");
+    //     });
+
+// let p1=new Promise((reslove,reject)=>{
+//     //reject(new Error('promise fail'))
+//     // throw new Error('fail')
+//     reject('rejected')
+
+// }).then(
+//     value=>{},
+//     reason=>{
+//         return new Promise((reslove,reject)=>{
+//             reject('p2')
+//         })
+//     }
+// )
+// .then(
+//     value=>console.log(value)
+// ).catch(error=>{
+//     console.log('catch:'+error)
+// })
+
+// let p1=new Promise((resolve,reject)=>{
+// resolve('fulfilled')
+// }).then(
+//     value=>{
+// return class{
+//     static then(resolve,reject){
+//         resolve(value)
+//     }
+// }
+//         return new obj()
+//     },
+//     reason=>{}
+// ).then(
+//     value=>{
+//         console.log(value)
+//     }
+// )
+// console.log(typeof p1);
+
+    // let p1 = new Promise((resolve, reject) => {
+    //     //resolve("我是成功状态");
+    //     reject("我是拒绝状态");
+    // })
+    //     .then(
+    //         value => {
+    //             return new Promise((resolve, reject) => {
+    //                 setTimeout(() => {
+    //                     reject("我是最外面一圈的第一个then里面resolve方法返回的新Promise，我的状态为fulfilled");
+    //                 }, 3000);
+    //             }).then(null, result => {
+    //                 return new Promise((resolve, reject) => {
+    //                     reject("我是最外面一圈的第一个then里面resolve方法返回的新Promise的then，我的状态为rejected");
+    //                 });
+    //             });
+    //         },
+    //         reason =>{
+    //              return new Promise((resolve, reject) => {
+    //                 reject("我是最外面一圈的第一个then里面rejected方法返回的新Promise，我的状态为rejected");
+    //             });
+    //         }
+    //     )
+    //     .then(
+    //         value => {
+    //             console.log("我是最外面一圈的第二个then的resolve的返回值:"+value);
+    //         },
+    //         reason => console.log("我是最外面一圈的第二个then的reject方法的返回值:"+reason)
+    //     ); 
+
+    // let p1 = new Promise((resolve, reject) => {
+    //     reject('拒绝')
+    //     //resolve('成功')
+    // })
+    // new Promise((resolve, reject) => {
+    //     resolve(p1)
+    // }).then(
+    //     success=>{
+    //         return new Promise((resolve,reject)=>{ resolve('解决了') })//返回一个状态为pending(准备)的promise
+    //     },
+    //     fail=>{
+    //          return '我是第一层then返回来的值，我是fail'
+    //     }
+    // ).then(
+    //     msg => {
+    //         console.log('msg:' + msg)
+    //     },
+    //     error => {
+    //         console.log('error:' + error)
+    //     }
+    // )
+
+        // let p1 = new Promise((resolve, reject) => {
+        //     //reject('拒绝')//p1的状态为拒绝
+        //     //resolve('成功')//后面的这个会被前面的覆盖
+        // })
+        // console.log(p1)
+        
+        // new Promise((resolve, reject) => {
+        //     resolve(p1)//把p1的状态传递给promise
+        //     //此处传过来的p1无论是不是promise类型，都会被转化为promise
+        // }).then(
+        //       msg => {
+        //         console.log('msg:' + msg)
+        //     },//成功方法
+        //     error => {
+        //         console.log('error:' + error)
+        //     }//拒绝方法
+        // )
+
+        // new Promise(resolve => {
+        //     setTimeout(() => {
+        //          resolve();//调换顺序以后也是先打印setTimeout
+        //         console.log("setTimeout");
+        //     }, 0);
+
+        //     console.log("promise");
+        // }).then(value => console.log("成功"));
+        // console.log("后盾人");
+
+        // setTimeout(() => {
+        //     console.log("setTimeout");
+        // }, 0);
+        // new Promise(resolve => {
+        //     //resolve();
+        //     console.log("promise");
+        // }).then(value => console.log("成功"));
+        // console.log("后盾人");
+
+        // new Promise((resolve, reject) => {
+        //     reject('拒绝状态')
+        //     resolve('操作成功')
+        // }).then(value => {
+        //     console.log('操作成功打印这个')
+
+        // }), reason => {
+        //     console.log('被拒绝了打印这个')
+        // }
+
+        // function load(src, resolve) {
+        //     let script = document.createElement('script')
+        //     script.src = src
+        //     script.onload = resolve
+        //     document.body.appendChild(script)
+        // }
+        // load('./0204model.js', () => {
+        //     load('./0204model2.js', () => {
+        //         model2()
+        //     })
+        // })
+
+
+        // function interval(callback, delay = 50) {
+        //     let id = setInterval(() => callback(id), delay);
+        // }
+        // interval(timeId => {
+        //     const div = document.querySelector("div");
+        //     let left = parseInt(window.getComputedStyle(div).left);
+        //     div.style.left = left + 10 + "px";
+        //     if (left >= 200) {
+        //         clearInterval(timeId);
+        //         interval(timeId => {
+        //             let width = parseInt(window.getComputedStyle(div).width);
+        //             div.style.width = width - 10 + "px";
+        //             if (width <= 20) {
+        //                 clearInterval(timeId);
+        //             }
+        //         }, 100);
+        //     }
+        // }, 50);
+        // console.log("houdunren.com");
+
+        // function loadImage(src, resolve, reject) {
+        //     let image = new Image()
+        //     image.src = src
+        //     image.onload = () => {
+        //         resolve(image)//将image传入resolve函数
+        //     }
+        //     image.onerror = reject
+        // }
+        // loadImage('./shushu.jpg', image => {
+        //     document.body.appendChild(image)
+        //     //console.log('图片加载完成')
+        // }), () => {
+        //     console.log('加载失败')
+        // }
+    </script>
+</body>
+
+</html>

@@ -30,6 +30,9 @@
 //     }
 // }
 // export{User as default,site}
-let site='111'
-let url='uuu'
-export {site,url}
+// let site='111'
+// let url='uuu'
+// export {site,url}
+function model() {
+    console.log('我是0204model的js')
+}
