@@ -10,30 +10,44 @@
             width: 100px;
             height: 100px;
             background: yellowgreen;
+            text-align: center;
+            color: aliceblue;
+            font-size: 80px;
             position: absolute;
         }
     </style>
 </head>
 
 <body>
-    <div></div>
+    <div id="hd"></div>
     <script src="./ajax.js"></script>
     <script>
-    async function hd(name) {
-        try{
-            let user = await ajax(`http://localhost:8888/php/user.php?name=${name}`);
-            let lessons = await ajax(
-                `http://localhost:8888/php/houdunren.php?id=${user.id}`
-            );
-            return lessons;
-}catch(error){
-    alert(error.message)
-}
+    function handle() {
+        let i = 0;
+        (function run() {
+            hd.innerHTML = i;
+            hd.style.width = i + "%";
+            if (++i <= 100) {
+                setTimeout(run, 20);
+            }
+        })();
     }
-    hd("后盾人教程")
-        .then(lessons => {
-            console.log(lessons);
-        })
+handle()
+//     async function hd(name) {
+//         try{
+//             let user = await ajax(`http://localhost:8888/php/user.php?name=${name}`);
+//             let lessons = await ajax(
+//                 `http://localhost:8888/php/houdunren.php?id=${user.id}`
+//             );
+//             return lessons;
+// }catch(error){
+//     alert(error.message)
+// }
+//     }
+//     hd("后盾人教程")
+//         .then(lessons => {
+//             console.log(lessons);
+//         })
 
     // class User {
     //         async get(name) {
