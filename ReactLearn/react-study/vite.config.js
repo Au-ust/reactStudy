@@ -6,9 +6,9 @@ import eslintPlugin from 'vite-plugin-eslint'
 export default defineConfig({
   plugins: [
     react(),
-    eslintPlugin({
-      include: ['src/*.jsx', 'src/**/*.jsx'],
-    }),
+    // eslintPlugin({
+    //   include: ['src/*.jsx', 'src/**/*.jsx'],
+    // }),
   ],
   css: {
     modules: { localsConvention: 'camelCase' },
