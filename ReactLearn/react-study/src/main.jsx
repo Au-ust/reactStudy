@@ -20,11 +20,24 @@ import { createRoot } from 'react-dom/client'
 //import App from './22_简化状态不可变的操作'
 //import App from './23_惰性初始化状态'
 //import App from './24_状态提示实现共享'
-import App from './25_状态的重置'
-
+//import App from './25_状态的重置'
+//import App from './26_状态计算变量'
+//import App from './27_受控组件'
+// import Todos from './28_实战'
+//import App from './01_ref引用值'
+//import App from './02_ref操作dom'
+// import App from './04_处理副作用'
+//import App from './08_useInsertionEffect'
+//import App from './09_reducer'
+//import App from './10_Context传递数据'
+//import App from './11_Context和Reducer'
+//import Cart from './Hooks/购物车'
+import App from './01_antd的基本使用'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    {/* <Cart/> */}
     <App />
+    {/* <Todos /> */}
   </StrictMode>
 )
